@@ -1,0 +1,455 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Accounts Page</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <link href="{% static 'css/BYekan.css' %}" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+        .col {
+            padding-left: .7%;
+            padding-right: .7%;
+
+        }
+
+        .btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active, .show > .btn-outline-secondary.dropdown-toggle {
+            background-color:#243055;
+            border-color:#243055;
+        }
+        .btn2:hover{
+            background-color:rgba(53,72,126,0.77);
+        }
+        body {
+
+            font-family: BYekan, 'BYekan', tahoma;
+        }
+
+        .slideanim {
+            visibility: hidden;
+        }
+
+        .fadeInanim {
+            visibility: hidden;
+        }
+
+        .fadeIn {
+            -webkit-animation-name: fadeIn;
+            -moz-animation-name: fadeIn;
+            -o-animation-name: fadeIn;
+            animation-name: fadeIn;
+            -webkit-animation-duration: 1s;
+            -moz-animation-duration: 1s;
+            -o-animation-duration: 1s;
+            animation-duration: 1s;
+            visibility: visible;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: .5;
+            }
+            80% {
+                opacity: .8;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: .5;
+            }
+
+            80% {
+                opacity: .8;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+    </style>
+</head>
+<body style="background-color: #F9FBFD">
+<div class="container-fluid">
+    <div class="row">
+        <div class="row col-12 col-sm-12 col-md-9 pt-3 pb-3 h-100  align-items-center">
+            <div class="col-md-12">
+                <div class=" card text-light text-center  p-2 mb-4" style="background-color:#243055">
+                    <div class="card-text">نام ارائه دهنده:{{ service.business.owner.username }}</div>
+                    <div class="card-text">نام سرویس : {{ service.name }}</div>
+                    <div class="card-text">قیمت : {{ service.fee }}</div>
+                    <div class="card-text">امتیاز : {{ service.rating }}</div>
+                    <div class="card-text">امتیاز : {{ incident|date:"F d Y P" }}</div>
+
+                </div>
+                <div class=" card text-light text-center  p-2 mb-4" style="background-color:#243055">
+                    <div class="card-title">توضیحات</div>
+                    <div class="card-text"> {{ service.description }}</div>
+                    <div class="card-title">زمان شروع:{{ timetable.start_time.isoformat|slice:":5"}}</div>
+                    <div class="card-title">زمان پایان:{{ timetable.end_time.isoformat|slice:":5"}}</div>
+
+                </div>
+
+                <h5 class="text-center">This Week Timetable</h5>
+                <div class="row mt-5">
+                    <div class="col text-center" id="Mon">
+                        <p style="font-size: 1em">MON</p>
+                        <div class=" time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time1">9</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time2">10</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time3">11</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time4">12</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time5">13</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time6">14</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time7">15</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time8">16</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time9">17</button>
+                        </div>
+                    </div>
+                    <div class="col text-center" id="Tue">
+                        <p style="font-size: 1em">TUE</p>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time1">9</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time2">10</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time3">11</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time4">12</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time5">13</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time6">14</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time7">15</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time8">16</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time9">17</button>
+                        </div>
+                    </div>
+                    <div class="col text-center" id="Wed">
+                        <p style="font-size: 1em">WED</p>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time1">9</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time2">10</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time3">11</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time4">12</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time5">13</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time6">14</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time7">15</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time8">16</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time9">17</button>
+                        </div>
+                    </div>
+                    <div class="col text-center" id="Thu">
+                        <p style="font-size: 1em">THU</p>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100 w-100" id="Thu_Time1">9</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100 w-100" id="Thu_Time2">10</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100 w-100" id="Thu_Time3">11</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Thu_Time4">12</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Thu_Time5">13</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Thu_Time6">14</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Thu_Time7">15</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Thu_Time8">16</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Thu_Time9">17</button>
+                        </div>
+                    </div>
+                    <div class="col text-center" id="Fri">
+                        <p style="font-size: 1em">FRI</p>
+
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time1">9</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time2">10</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time3">11</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time4">12</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time5">13</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time6">14</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time7">15</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time8">16</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time9">17</button>
+                        </div>
+                    </div>
+                    <div class="col text-center" id="Sat">
+                        <p style="font-size: 1em">SAT</p>
+
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Sat_Time1">9</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Sat_Time2">10</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Sat_Time3">11</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Sat_Time4">12</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100" id="Sat_Time5">13</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sat_Time6">14</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sat_Time7">15</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sat_Time8">16</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sat_Time9">17</button>
+                        </div>
+                    </div>
+                    <div class="col text-center" id="Sun">
+                        <p style="font-size: 1em">SUN</p>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time1">9</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time2">10</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time3">11</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time4">12</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time5">13</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time6">14</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time7">15</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time8">16</button>
+                        </div>
+                        <div class="time mt-md-3 mt-sm-2">
+                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time9">17</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 justify-content-center " style="font-size: 1em ;color:white;background-color: #243055 ">
+            <h4 class="text-center mt-2" > نظرات</h4>
+            {% for review in reviews %}
+            <div class="card m-2 bg-transparent border-bottom-0 border-right-0 border-top-0" style="background-color: #3affff">
+                <div class="card-body "style="background-color: #3ac0ff;color: #0f0f10" >
+                    <div class="row  text-center justify-content-center align-items-center ">
+                        <a style="">نام کاربری :{{review.user_id}} </a>
+                    </div>
+                    <a style="align-content: right">توضیحات:</a>
+                    <p class="card-text" style="margin-top: 10px">{{ review.description }}</p>
+                    <a style="">امتیاز:</a>
+                    <a style="">{{review.rating}}</a>
+                    <!--<div class="likes">-->
+                    <!--<div class=""><i class="material-icons">thumb_up</i ></div>-->
+                    <!--<div class="align-self-center "><span style="font-size: 10px">36</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="dislikes">-->
+                    <!--<div class=""><i class="material-icons">thumb_down</i></div>-->
+                    <!--<div class="align-self-center "><span style="font-size: 10px">63</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="comments">-->
+                    <!--<div class=""><i class="material-icons">comment</i></div>-->
+                    <!--<div class=" align-self-center "><span style="font-size: 10px">36</span></div>-->
+                    <!--</div>-->
+                    <!--<div class="view">-->
+                    <!--<a  href="post.html"><button onmouseover="aa()" type="button" class="buuuut btn2 btn btn-default">view</button></a>-->
+                    <!--</div>-->
+
+                    <!--</div>-->
+
+                </div>
+            </div>
+                {% endfor %}
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script>
+    function myMap() {
+        var mapCanvas = document.getElementById("map");
+        var mapOptions = {
+            center: new google.maps.LatLng(40.5, -0.2),
+            zoom: 80
+        };
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+    }
+
+    $(document).ready(function () {
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function () {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+
+        $(window).scroll(function () {
+            $(".slideanim").each(function () {
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+
+            $(".fadeInanim").each(function () {
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("fadeIn");
+                }
+            });
+        });
+    })
+
+</script>
+<script src="{% static 'js/popper.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>

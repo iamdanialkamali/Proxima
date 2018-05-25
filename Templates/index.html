@@ -1,0 +1,34 @@
+{% extends 'master.html' %}
+{% load  static %}
+{% block content %}
+   <div class="row justify-content-center">
+        <div class="col-md-4 col-sm-10 col-12">
+            <div class="card m-3">
+                <div class="card-block p-2">
+                    <h4 class="card-title">رزرو اسان</h4>
+                    <p class="card-text"><img src= "{% static 'images/calendar.png' %}" width="100" height="100" alt="online payment" style="float:right;">از هر کجا که هستید به سادگی رزرو کنید</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-10 col-12">
+            <div class="card m-3">
+                <div class="card-block p-2">
+                    <h4 class="card-title">یاداوری رزروها</h4>
+                    <p class="card-text"><img src="{% static 'images/reminder.jpg' %}" width="100" height="100" alt="online payment" style="float:right;">رزروهای خود رو یا یاداوری های خودکار فراموش نمی کنید</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-10 col-12">
+            <div class="card m-3">
+                <div class="card-block p-2">
+                    <h4 class="card-title">پرداخت آنلاین</h4>
+                    <p class="card-text"><img src="{% static 'images/payment.png' %}" width="100" height="100" alt="online payment" style="float:right;">هزینه رزرو خود را به صورت آنلاین پرداخت کنید</p>
+                </div>
+            </div>
+        </div>
+
+
+   </div>
+
+
+{% endblock content %}

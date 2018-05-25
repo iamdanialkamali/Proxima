@@ -1,0 +1,113 @@
+{% load static           %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Create Business</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <link href="{% static 'css/BYekan.css' %}" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<style>
+
+
+    body {
+        background-color: #F9FBFD;
+        font-family: BYekan, 'BYekan', tahoma;
+    }
+
+</style>
+</head>
+<body>
+<nav class="navbar navbar-dark navbar-expand-md text-center" style="background-color:#243055 ">
+        <a class="navbar-brand" href="#">زنبیل</a>
+        <button class="navbar-toggler navbar- " type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav ml-auto ">
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="{% url 'main' %}">خانه</a>
+                </li>
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="#">درباره ی ما</a>
+                </li>
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="#">طرح ها</a>
+                </li>
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="timetable.html">برترین ها</a>
+                </li>
+            </ul>
+            <span class="ml-auto nav-item text-light">77307593 <i class="ion-android-call ml-1"></i></span>
+        </div>
+    </nav>
+<div class="container">
+
+    <h4 class="text-info">ساخت کسب و کار جدید</h4>
+    <br><br>
+    <form>
+                    <div class="form-group">
+                        <label for="name">نام کسب کار</label>
+                        <input type="text" placeholder="name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">شماره همراه</label>
+                        <input type="text" placeholder="phone number" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="ٍcity">شهر</label>
+                        <input type="text" placeholder="city" class="form-control">
+                    </div>
+
+
+                     <div class="form-group">
+                <label for="ٍcategory">دسته بندی</label>
+                <select class="form-control" id="category">
+                <option>رستوران</option>
+                <option>کافه</option>
+                <option>هتل</option>
+                <option>پزشک</option>
+                <option>ارایشگاه</option>
+                </select>
+            </div>
+
+                     <div class="form-group">
+                        <label for="ٍaddress">آدرس</label>
+                         <textarea class="form-control" id="address" rows="3"></textarea>
+                    </div>
+
+                     <div class="form-group">
+                        <label for="ٍdiscription">توضیحات</label>
+                         <textarea class="form-control" id="discription" rows="3"></textarea>
+                    </div>
+
+
+                    <div class="form-check">
+                        <label class="form-check-label" ml-2></label>
+                        <input type="checkbox" class="form-check-input">
+                        <a href="#"> قوانین و مقررات</a>را میپذیرم
+
+                    </div>
+                </form>
+    <button class="btn btn-success">ساخت کسب وکار</button>
+
+</div>
+
+
+
+
+<div style="margin-top:500px;"></div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+</html>

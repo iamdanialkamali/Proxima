@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Accounts Page</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <link href="{% static 'css/BYekan.css' %}" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<style>
+
+
+    body {
+        background-color: #F9FBFD;
+        font-family: BYekan, 'BYekan', tahoma;
+    }
+
+</style>
+
+<body>
+
+<!-- LOGIN MODAL -->
+<div class="modal" id="loginModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="myModalLabel">ورود</h5>
+                <button class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username">ایمیل</label>
+                        <input type="text" placeholder="Email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">رمزعبور</label>
+                        <input type="password" placeholder="Password" class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                <a href="homepage.html">
+                    <button class="btn btn-primary">ورود</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- register MODAL -->
+<div class="modal" id="registerModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">ثبت نام</h5>
+                <button class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="name">نام</label>
+                        <input type="text" placeholder="name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="familyName">نام خانوادگی</label>
+                        <input type="text" placeholder="family Name" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="ٍEmail">ایمیل</label>
+                        <input type="text" placeholder="Username" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">رمزعبور</label>
+                        <input type="password" placeholder="Password" class="form-control">
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" ml-2></label>
+                        <input type="checkbox" class="form-check-input">
+                        <a href="#"> قوانین و مقررات</a>را میپذیرم
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-dismiss="modal">بستن</button>
+                <button class="btn btn-primary">ثبت نام</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- search form -->
+
+<div class="container mb-5">
+    <nav class="navbar navbar-dark navbar-expand-md  text-center" style="background-color:#243055">
+        <a class="navbar-brand" href="#">اسم رستوران</a>
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav ml-auto   ">
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="{% url 'main' %}">خانه</a>
+                </li>
+                {% for foo in categories %}
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="{% url 'Businesses' foo.id  %}">{{ foo.name }}</a>
+                </li>
+                {% endfor %}
+
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="{% url 'resturant'  %}">رستوران</a>
+                </li>
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="{% url 'cafe'  %}">کافه</a>
+                </li>
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="{% url 'hotel'  %}">هتل</a>
+                </li>
+
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="{% url 'doctor'  %}">پزشک</a>
+                </li>
+
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="{% url 'beautysalon'  %}">آرایشگاه</a>
+                </li>
+            </ul>
+            <span class="ml-auto">
+                <span class="ml-auto">
+                <a href="{% url 'account' %}"><i class="ion-person" style="font-size: 3em;color: white"></i></a>
+            </span>
+              <button class="btn  btn-link ml-auto" data-toggle="modal" data-target="#loginModal">ورود</button>
+                <!-- REGISTER MODAL TRIGGER -->
+              <button class="btn  btn-link ml-auto" data-toggle="modal" data-target="#registerModal">ثبت نام</button>
+            </span>
+        </div>
+    </nav>
+
+    <form class="form-inline float-right mt-4" action="{% url 'search'  %}" method="post">
+        {% csrf_token %}
+        <input name="searchfield" type="text" class="form-control" placeholder="جست وجو">
+        <input type="submit" value="search" class="btn btn-outline-info"></input>
+    </form>
+
+</div>
+
+<br><br>
+<div class="container">
+
+    <!-- SLIDER WITH CAPTIONS -->
+    <div id="slider" class="carousel slide" data-ride="carousel" dir="ltr" style="height: 80vh">
+        <ol class="carousel-indicators">
+            <li class="active" data-target="#slider" data-slide-to="0"></li>
+            <li class="active" data-target="#slider" data-slide-to="1"></li>
+            <li class="active" data-target="#slider" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner h-100 " role="listbox">
+            <div class="carousel-item active h-100">
+                <div class="card h-100">
+                    <img src="{% static 'images/dentist.png' %}" alt="Second Slide" class="card-img d-block img-fluid h-100">
+                    <div class="card-img-overlay ">
+                        <div class="card-text carousel-caption d-none d-md-block" style="background-color: rgba(168,167,190,0.26);color:#243055 ">
+                            <h3>انی سا</h3>
+                            <p>لبخندی زیبا در مرکز دندانپزشکی انی سا</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item h-100">
+                <img src="{% static 'images/atmosfera3.jpg' %}" alt="First Slide" class="d-block img-fluid h-100 w-100">
+                <div class="carousel-caption d-none d-md-block"  style="background-color: rgba(168,167,190,0.26);color:#243055">
+                    <h3>عمارت فردوس</h3>
+                    <p>ثبت خاطراتی خوش در رستوران دل انگیز عمارت فردوس</p>
+                </div>
+            </div>
+            <div class="carousel-item h-100">
+                <img src="{% static 'images/hotel1.jpg' %}" alt="Third Slide" class="d-block img-fluid h-100 w-100">
+                <div class="carousel-caption d-none d-md-block "style="background-color: rgba(168,167,190,0.26);color:#243055">
+                    <h3>هتل اپادانا</h3>
+                    <p>هتل چهارستاره اپادانا با چشم انداز بارگاه پاک آفتاب هشتم </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<br><br>
+{% block content %}
+{% endblock %}
+
+
+
+
+
+</div>
+
+
+<div style="margin-top:500px;"></div>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/tether.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>

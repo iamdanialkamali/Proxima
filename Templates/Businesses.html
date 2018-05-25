@@ -1,0 +1,26 @@
+{% extends 'master.html' %}
+{% load static%}
+
+{% block content %}
+      <br><br>
+           <!-- CARDS -->
+<div class="container">
+    <div class="row justify-content-center">
+        {% for business in category_businesses  %}
+        <div class="col-md-4 col-sm-10 col-12">
+            <div class="card m-3">
+                <img class="card-img-top" src=" {%static 'images/atmosfera1.jpg' %}" alt="Card image cap">
+                <div class="card-block p-2">
+                    <h4 class="card-title">{{ business.name }}</h4>
+                    <p class="card-text">{{ business.description }}</p>
+                    <a href="{% url 'BusinessPage' business.id %}" class="btn btn-info btn-block">بیشتر...</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock content %}
+</body>
+</html>

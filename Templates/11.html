@@ -1,0 +1,321 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Accounts Page</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <link href="{% static 'css/BYekan.css' %}" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+    <style>
+        body {
+            background-color: rgba(212, 226, 122, 0.24);
+            font-family: BYekan, 'BYekan', tahoma;
+        }
+
+        .slideanim {
+            visibility: hidden;
+        }
+
+        .fadeInanim {
+            visibility: hidden;
+        }
+
+        .fadeIn {
+            -webkit-animation-name: fadeIn;
+            -moz-animation-name: fadeIn;
+            -o-animation-name: fadeIn;
+            animation-name: fadeIn;
+            -webkit-animation-duration: 1s;
+            -moz-animation-duration: 1s;
+            -o-animation-duration: 1s;
+            animation-duration: 1s;
+            visibility: visible;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: .5;
+            }
+            80% {
+                opacity: .8;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: .5;
+            }
+
+            80% {
+                opacity: .8;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container mb-5">
+    <nav class="navbar navbar-light navbar-expand-md bg-transparent text-center" >
+        <a class="navbar-brand" href="#">اسم رستوران</a>
+        <button class="navbar-toggler navbar- " type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNav">
+            <ul class="navbar-nav ml-auto   ">
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="index.html">خانه</a>
+                </li>
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="#">درباره ی ما</a>
+                </li>
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="#">منو</a>
+                </li>
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="timetable.html">رزرو</a>
+                </li>
+            </ul>
+            <span class="ml-auto">77307593 <i class="ion-android-call ml-1"></i></span>
+        </div>
+    </nav>
+</div>
+<div class="container " style="border: 10px solid rgba(170,161,191,0.38);">
+    <div class="card text-dark mt-3">
+        <img class="card-img" src={% static 'images/menu-facebook-a.jpg' %} alt="Card image">
+        <div class="card-img-overlay">
+        </div>
+    </div>
+    <div class=" mt-5 text-center justify-content-center slideanim ">
+        <p class="w-50 offset-3">در این قسمت توضیحات کلی درباره ی رستوران داده میشود در این قسمت توضیحات کلی درباره ی
+            رستوران داده میشود در این قسمت توضیحات کلی درباره ی رستوران داده میشود </p><br>
+        <button class="btn btn-outline-dark">رزرو</button>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-6 text-center" style="height:inherit;">
+            <div class="card col-md-12" style="border: none;">
+                <img class="card-img img-fluid" src="{% static 'images/uno.jpg' %}">
+            </div>
+            <div class="card d-sm-none d-md-block col-md-9  offset-md-3 mt-5" style="border: none;">
+                <img class="card-img img-fluid fadeInanim" src="{% static 'images/dolce.jpg' %}">
+            </div>
+        </div>
+        <div class="col-md-6 d-md-block d-sm-none text-center" style="height:inherit">
+            <div class="col-md-8 mt-5 mb-3 fadeInanim">
+                <img class="img-fluid" src="{% static 'images/fish.jpg' %}">
+            </div>
+            <div class="col-md-12 mt-5 fadeInanim">
+                <img class="img-fluid" src="{% static 'images/filetto.jpg' %}">
+            </div>
+            <div class="col-md-10 mt-5 mb-3 fadeInanim">
+                <img class="img-fluid" src="{% static 'images/risotto.jpg' %}">
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-12">
+
+            <div class="text-center m-3">
+                <h3>منو</h3>
+                <p>تو این قسمت اگه خواستن میتونن در حد ۳,۴ تا جمله در مورد منو توضیح بدن</p>
+            </div>
+            <div class="col-md-12 col-12 col-sm-12">
+                <div class="card text-dark mt-3" style="border: none ;height: inherit">
+                    <img class="card-img img-fluid fadeInanim" src="{% static 'images/menu.jpeg' %}" alt="Card image"
+                         style="height: inherit">
+                    <div class="card-img-overlay">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card text-dark mt-3" style="border: none">
+        <img class="card-img" src="{% static 'images/social-1.jpg' %}" alt="Card image">
+        <div class="card-img-overlay">
+            <div class="row justify-content-center align-items-end" style="height: 100%">
+                <div class="row breadcrumb bg-light text-dark">
+                    <a class="breadcrumb-item " href="#">Facebook</a>
+                    <a class="breadcrumb-item " href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3 class="card-title d-sm-block d-md-none text-center mt-5">فضای رستوران</h3>
+    <div class="row mt-3">
+        <div class="col-md-6 col-sm-12 d-md-block ">
+            <div class="card text-dark mt-4" style="border: none ;height: inherit">
+                <img class="card-img img-fluid fadeInanim" src="{% static 'images/atmosfera1.jpg' %}" alt="Card image"
+                     style="height: inherit">
+                <div class="card-img-overlay">
+                </div>
+            </div>
+            <div class="card text-dark mt-4" style="border: none ;height: inherit">
+                <img class="card-img img-fluid fadeInanim" src="{% static 'images/atmosfera5.jpg' %}" alt="Card image"
+                     style="height: inherit">
+                <div class="card-img-overlay">
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6 col-sm-12 d-md-block ">
+            <h3 class="card-title d-sm-none d-md-block mb-5 text-center">فضای رستوران</h3>
+            <div class="card text-dark mt-4" style="border: none ;height: inherit">
+                <img class="card-img img-fluid fadeInanim" src="{% static 'images/atmosfera.jpg' %}" alt="Card image"
+                     style="height: inherit">
+                <div class="card-img-overlay"></div>
+            </div>
+            <div class="card text-dark mt-4" style="border: none ;height: inherit">
+                <img class="card-img img-fluid fadeInanim" src="{% static 'images/atmosfera6.jpg' %}" alt="Card image"
+                     style="height: inherit">
+                <div class="card-img-overlay"></div>
+            </div>
+        </div>
+    </div>
+    <div id="map" style="height:400px;"></div>
+    <footer class="pt-4 mt-4 w-100" style="background-color:rgba(170,161,191,0.38); ">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="m-2 text-uppercase">اسم رستوران</h5>
+                    <div> تهران - مستقیم - دست راست<i class="m-2 ion-location"></i></div>
+                    <div>77305856<i class=" m-2 ion-ios-telephone"></i></div>
+                </div>
+                <div class="mr-auto">
+                    <nav class="nav flex-column text-dark">
+                        <a class="nav-link" href="#">خانه</a>
+                        <a class="nav-link" href="#">درباره ی ما</a>
+                        <a class="nav-link" href="#">منو</a>
+                        <a class="nav-link" href="#">رزرو</a>
+                    </nav>
+                </div>
+            </div>
+            <hr>
+            <div class="row align-items-center justify-content-center">
+                <a class="m-2"><i class="ion-social-instagram" style="font-size: x-large "></i></a>
+                <a class="m-2"><i class="fa fa-twitter" style="font-size: x-large"></i></a>
+                <a class="m-2"><i class="fa fa-telegram" style="font-size: x-large"></i></a>
+
+            </div>
+        </div>
+        <div class="footer-copyright py-3 text-center">
+            © 2018 Copyright:
+        </div>
+
+    </footer>
+
+</div>
+
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+
+
+<script>
+    function myMap() {
+        var mapCanvas = document.getElementById("map");
+        var mapOptions = {
+            center: new google.maps.LatLng(40.5, -0.2),
+            zoom: 80
+        };
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+    }
+
+    $(document).ready(function () {
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function () {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+
+        $(window).scroll(function () {
+            $(".slideanim").each(function () {
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+
+            $(".fadeInanim").each(function () {
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("fadeIn");
+                }
+            });
+        });
+    })
+
+</script>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ&callback=myMap"></script>
+
+<script src="{% static 'js/tether.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+</html>
