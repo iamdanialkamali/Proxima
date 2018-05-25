@@ -10,8 +10,7 @@ class Users(AbstractUser):
     id = models.AutoField(primary_key=True)
     phone_number = models.CharField(max_length=20,blank=True)
     national_code = models.CharField(max_length=10,blank=True)
-    history =ArrayField(models.PositiveIntegerField(blank=True,default=0),blank=True,default=[0])
-    
+
 
 class Categories(models.Model):
     id = models.AutoField(primary_key=True)
