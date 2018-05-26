@@ -7,6 +7,9 @@
     <title>Accounts Page</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/persian-date.js' %}"></script>
+    <script src="{% static 'js/persian-datepicker.js' %}"></script>
     <link href="{% static 'css/BYekan.css' %}" rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <style>
@@ -133,219 +136,42 @@
 
                 </div>
 
-                <h5 class="text-center">This Week Timetable</h5>
+
+           <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="left">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </div>
+                <input type="text" class="form-control" id="fromDate1" placeholder="از تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#fromDate1" data-groupid="group1" data-fromdate="true" data-enabletimepicker="false" data-placement="right" />
+            </div>
+
+            <div class="input-group">
+                <div class="input-group-addon" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate1" data-groupid="group1" data-todate="true" data-enabletimepicker="true" data-placement="left">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </div>
+                <input type="text" class="form-control" id="toDate1" placeholder="تا تاریخ" data-mddatetimepicker="true" data-trigger="click" data-targetselector="#toDate1" data-groupid="group1" data-todate="true" data-enabletimepicker="true" data-placement="right" />
+            </div>
+            </div>
+        </div>
+
+
+
+
+                    <input type="text" class="example1" />
+              <form class="form-inline float-right mt-4"  method="post">
+                {% csrf_token %}
+                <input name="date" type="date" class="form-control">
+                <input type="submit"  id="date" onClick="alert('You clicked the button using Javascript.');" value="show" class="btn btn-outline-info"></input>
+            </form>
+                <h5 class="text-center">Timetable</h5>
                 <div class="row mt-5">
                     <div class="col text-center" id="Mon">
                         <p style="font-size: 1em">MON</p>
+                        {% for sans in sanses %}
                         <div class=" time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time1">9</button>
+                            <button class="btn2 btn btn-outline-secondary  w-100"  id={{ sans.id }}>{{ sans.start_time }}   to {{ sans.end_time }}</button>
                         </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time2">10</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time3">11</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time4">12</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time5">13</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time6">14</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time7">15</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time8">16</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Mon_Time9">17</button>
-                        </div>
-                    </div>
-                    <div class="col text-center" id="Tue">
-                        <p style="font-size: 1em">TUE</p>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time1">9</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time2">10</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time3">11</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time4">12</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time5">13</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time6">14</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time7">15</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time8">16</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Tue_Time9">17</button>
-                        </div>
-                    </div>
-                    <div class="col text-center" id="Wed">
-                        <p style="font-size: 1em">WED</p>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time1">9</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time2">10</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time3">11</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time4">12</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time5">13</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time6">14</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time7">15</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time8">16</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Wed_Time9">17</button>
-                        </div>
-                    </div>
-                    <div class="col text-center" id="Thu">
-                        <p style="font-size: 1em">THU</p>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100 w-100" id="Thu_Time1">9</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100 w-100" id="Thu_Time2">10</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100 w-100" id="Thu_Time3">11</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Thu_Time4">12</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Thu_Time5">13</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Thu_Time6">14</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Thu_Time7">15</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Thu_Time8">16</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Thu_Time9">17</button>
-                        </div>
-                    </div>
-                    <div class="col text-center" id="Fri">
-                        <p style="font-size: 1em">FRI</p>
-
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time1">9</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time2">10</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time3">11</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time4">12</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time5">13</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time6">14</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time7">15</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time8">16</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Fri_Time9">17</button>
-                        </div>
-                    </div>
-                    <div class="col text-center" id="Sat">
-                        <p style="font-size: 1em">SAT</p>
-
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Sat_Time1">9</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Sat_Time2">10</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Sat_Time3">11</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Sat_Time4">12</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100" id="Sat_Time5">13</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sat_Time6">14</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sat_Time7">15</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sat_Time8">16</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sat_Time9">17</button>
-                        </div>
-                    </div>
-                    <div class="col text-center" id="Sun">
-                        <p style="font-size: 1em">SUN</p>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time1">9</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time2">10</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time3">11</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time4">12</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time5">13</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time6">14</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time7">15</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time8">16</button>
-                        </div>
-                        <div class="time mt-md-3 mt-sm-2">
-                            <button class="btn2 btn btn-outline-secondary  w-100 active" id="Sun_Time9">17</button>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -362,24 +188,6 @@
                     <p class="card-text" style="margin-top: 10px">{{ review.description }}</p>
                     <a style="">امتیاز:</a>
                     <a style="">{{review.rating}}</a>
-                    <!--<div class="likes">-->
-                    <!--<div class=""><i class="material-icons">thumb_up</i ></div>-->
-                    <!--<div class="align-self-center "><span style="font-size: 10px">36</span></div>-->
-                    <!--</div>-->
-                    <!--<div class="dislikes">-->
-                    <!--<div class=""><i class="material-icons">thumb_down</i></div>-->
-                    <!--<div class="align-self-center "><span style="font-size: 10px">63</span></div>-->
-                    <!--</div>-->
-                    <!--<div class="comments">-->
-                    <!--<div class=""><i class="material-icons">comment</i></div>-->
-                    <!--<div class=" align-self-center "><span style="font-size: 10px">36</span></div>-->
-                    <!--</div>-->
-                    <!--<div class="view">-->
-                    <!--<a  href="post.html"><button onmouseover="aa()" type="button" class="buuuut btn2 btn btn-default">view</button></a>-->
-                    <!--</div>-->
-
-                    <!--</div>-->
-
                 </div>
             </div>
                 {% endfor %}
@@ -393,7 +201,23 @@
 </div>
 
 <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/calendar.js' %}" ></script>
+<script src="{% static 'js/jquery.Bootstrap-PersianDateTimePicker.js'%}"></script>
+
+
+
+
 <script>
+    $('#input1').change(function() {
+            var $this = $(this),
+                value = $this.val();
+            alert(value);
+        });
+        $('#textbox1').change(function () {
+            var $this = $(this),
+                value = $this.val();
+            alert(value);
+        });
     function myMap() {
         var mapCanvas = document.getElementById("map");
         var mapOptions = {

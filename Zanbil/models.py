@@ -22,26 +22,32 @@ class Business(models.Model):
     name = models.CharField(max_length=100)
     phone_number = models.TextField(max_length=15)
     email = models.EmailField()
-    pics = ArrayField(models.ImageField(blank=True),blank=True,default=[])
+    #pics = ArrayField(models.ImageField(blank=True),blank=True,default=[])
     score = models.FloatField()
     address = models.TextField(max_length=500)
     description = models.TextField(max_length=600,default='test')
     category_id = models.OneToOneField(Categories ,on_delete=models.DO_NOTHING)
 
 
+
 class TimeTable(models.Model):
     id = models.AutoField(primary_key=True)
-    start_time = models.TimeField(auto_now=True)
-    end_time = models.TimeField(auto_now=True)
     sans_count = models.IntegerField()
     work_days  = ArrayField(models.IntegerField(blank=True),blank=True)
     rest_times = ArrayField(models.IntegerField(blank=True),blank=True)
+
+
+class Sans(models.Model):
+    id = models.AutoField(primary_key=True)
+    start_time = models.FloatField()
+    end_time = models.FloatField()
+    time_table = models.ForeignKey(to=TimeTable, on_delete=models.DO_NOTHING)
 
 class Services(models.Model):
     id = models.AutoField(primary_key=True)
     business=models.ForeignKey(to=Business,on_delete=models.DO_NOTHING)
     name = models.CharField(max_length=30)
-    pics = ArrayField(models.ImageField(blank=True),blank=True,default=[])
+    #pics = ArrayField(models.ImageField(blank=True),blank=True,default=[])
     fee = models.FloatField()
     timetable=models.ForeignKey(TimeTable,on_delete=models.DO_NOTHING)
     rating = models.FloatField()
@@ -64,3 +70,10 @@ class Review(models.Model):
     rating = models.FloatField()
     user_id= models.ForeignKey(Users,on_delete=models.DO_NOTHING)
     service_id= models.ForeignKey(Services,on_delete=models.DO_NOTHING)
+
+class pics(models.Model):
+    id=models.AutoField(primary_key=True)
+    name = models.CharField(null=True,max_length=200)
+    Business= models.ForeignKey(to=Business,on_delete=models.CASCADE,null=True,related_name='business_id')
+    Service= models.ForeignKey(to=Services, on_delete=models.CASCADE, null=True,related_name='service_id')
+    image = models.ImageField(blank=True)
