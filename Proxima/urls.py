@@ -19,20 +19,19 @@ from Zanbil import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.main,name='main'),
-    path('Businesses/<int:category_id>',views.Businessesspage,name='Businesses'),
-    path('beautysalon/',views.beautysalon,name='beautysalon'),
-    path('cafe/',views.beautysalon,name='cafe'),
-    path('doctor/',views.beautysalon,name='doctor'),
-    path('hotel/',views.beautysalon,name='hotel'),
-    path('resturant/',views.beautysalon,name='resturant'),
-    path('account/',views.account,name = 'account'),
-    path('account/createbusiness',views.createbusiness,name='createbusiness'),
-    path('ServicePage/<int:service_id>',views.showservice,name = 'ServicesPage'),
-    path('BusinessPage/<int:business_id>',views.showbusiness,name = 'BusinessPage'),
-    path('business/',views.search,name='search'),
-    path('ServicePage/timetable/',views.rendertimetable,name='timetable'),
-    path('book/<int:sansId>/<str:date>',views.book,name = 'book')
-
+    path('', views.main, name='main'),
+    path('Businesses/<int:category_id>', views.Businessesspage, name='Businesses'),
+    path('beautysalon/', views.beautysalon, name='beautysalon'),
+    path('cafe/', views.beautysalon, name='cafe'),
+    path('doctor/', views.beautysalon, name='doctor'),
+    path('hotel/', views.beautysalon, name='hotel'),
+    path('resturant/', views.beautysalon, name='resturant'),
+    path('account/<int:user_id>', views.account, name='account'),
+    path('account/createbusiness', views.createbusiness, name='createbusiness'),
+    path('ServicePage/<int:service_id>', views.showservice, name='ServicesPage'),
+    path('BusinessPage/<int:business_id>', views.showbusiness, name='BusinessPage'),
+    path('business/', views.search, name='search'),
+    path('ServicePage/timetable/', views.rendertimetable, name='timetable'),
+    path('book/', views.book, name='book')
 
 ]

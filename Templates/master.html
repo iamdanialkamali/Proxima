@@ -109,32 +109,32 @@
                     <a class="nav-link" href="{% url 'main' %}">خانه</a>
                 </li>
                 {% for foo in categories %}
-                <li class="nav-item mr-4">
-                    <a class="nav-link" href="{% url 'Businesses' foo.id  %}">{{ foo.name }}</a>
-                </li>
+                    <li class="nav-item mr-4">
+                        <a class="nav-link" href="{% url 'Businesses' foo.id %}">{{ foo.name }}</a>
+                    </li>
                 {% endfor %}
 
                 <li class="nav-item mr-4">
-                    <a class="nav-link" href="{% url 'resturant'  %}">رستوران</a>
+                    <a class="nav-link" href="{% url 'resturant' %}">رستوران</a>
                 </li>
                 <li class="nav-item mr-4">
-                    <a class="nav-link" href="{% url 'cafe'  %}">کافه</a>
+                    <a class="nav-link" href="{% url 'cafe' %}">کافه</a>
                 </li>
                 <li class="nav-item mr-4">
-                    <a class="nav-link" href="{% url 'hotel'  %}">هتل</a>
-                </li>
-
-                <li class="nav-item mr-4">
-                    <a class="nav-link" href="{% url 'doctor'  %}">پزشک</a>
+                    <a class="nav-link" href="{% url 'hotel' %}">هتل</a>
                 </li>
 
                 <li class="nav-item mr-4">
-                    <a class="nav-link" href="{% url 'beautysalon'  %}">آرایشگاه</a>
+                    <a class="nav-link" href="{% url 'doctor' %}">پزشک</a>
+                </li>
+
+                <li class="nav-item mr-4">
+                    <a class="nav-link" href="{% url 'beautysalon' %}">آرایشگاه</a>
                 </li>
             </ul>
             <span class="ml-auto">
                 <span class="ml-auto">
-                <a href="{% url 'account' %}"><i class="ion-person" style="font-size: 3em;color: white"></i></a>
+                <a href="{% url 'account' user.id %}"><i class="ion-person" style="font-size: 3em;color: white"></i></a>
             </span>
               <button class="btn  btn-link ml-auto" data-toggle="modal" data-target="#loginModal">ورود</button>
                 <!-- REGISTER MODAL TRIGGER -->
@@ -143,7 +143,7 @@
         </div>
     </nav>
 
-    <form class="form-inline float-right mt-4" action="{% url 'search'  %}" method="post">
+    <form class="form-inline float-right mt-4" action="{% url 'search' %}" method="post">
         {% csrf_token %}
         <input name="searchfield" type="text" class="form-control" placeholder="جست وجو">
         <input type="submit" value="search" class="btn btn-outline-info"></input>
@@ -164,9 +164,11 @@
         <div class="carousel-inner h-100 " role="listbox">
             <div class="carousel-item active h-100">
                 <div class="card h-100">
-                    <img src="{% static 'images/dentist.png' %}" alt="Second Slide" class="card-img d-block img-fluid h-100">
+                    <img src="{% static 'images/dentist.png' %}" alt="Second Slide"
+                         class="card-img d-block img-fluid h-100">
                     <div class="card-img-overlay ">
-                        <div class="card-text carousel-caption d-none d-md-block" style="background-color: rgba(168,167,190,0.26);color:#243055 ">
+                        <div class="card-text carousel-caption d-none d-md-block"
+                             style="background-color: rgba(168,167,190,0.26);color:#243055 ">
                             <h3>انی سا</h3>
                             <p>لبخندی زیبا در مرکز دندانپزشکی انی سا</p>
                         </div>
@@ -175,14 +177,16 @@
             </div>
             <div class="carousel-item h-100">
                 <img src="{% static 'images/atmosfera3.jpg' %}" alt="First Slide" class="d-block img-fluid h-100 w-100">
-                <div class="carousel-caption d-none d-md-block"  style="background-color: rgba(168,167,190,0.26);color:#243055">
+                <div class="carousel-caption d-none d-md-block"
+                     style="background-color: rgba(168,167,190,0.26);color:#243055">
                     <h3>عمارت فردوس</h3>
                     <p>ثبت خاطراتی خوش در رستوران دل انگیز عمارت فردوس</p>
                 </div>
             </div>
             <div class="carousel-item h-100">
                 <img src="{% static 'images/hotel1.jpg' %}" alt="Third Slide" class="d-block img-fluid h-100 w-100">
-                <div class="carousel-caption d-none d-md-block "style="background-color: rgba(168,167,190,0.26);color:#243055">
+                <div class="carousel-caption d-none d-md-block "
+                     style="background-color: rgba(168,167,190,0.26);color:#243055">
                     <h3>هتل اپادانا</h3>
                     <p>هتل چهارستاره اپادانا با چشم انداز بارگاه پاک آفتاب هشتم </p>
                 </div>

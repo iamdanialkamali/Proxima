@@ -49,7 +49,7 @@
     <div class="card bg-transparent align-items-center mt-5" style="border: none">
         <img class="card-img-top rounded-circle img-fluid " style="width: 10%" src="{% static 'images/user.png' %}">
         <p class="card-title mt-3">
-            Name
+            {{ user.username }}
         </p>
         <div class="row">
             <button class="btn btn-light bg-transparent card-link" href="#">رزرو های من</button>
@@ -57,200 +57,65 @@
         </div>
     </div>
 
-    <div class="container"><a href="{% url 'createbusiness' %}"><button class="btn btn-primary">ساخب کسب وکار جدید</button></a></div>
+    <div class="container"><a href="{% url 'createbusiness' %}">
+        <button class="btn btn-primary">ساخب کسب وکار جدید</button>
+    </a></div>
 
     <div class="container mt-5 p-2 text-center"
          style="border:5px solid #243055; ">
         <h4>رزرو های من</h4>
         <div class="row mt-4 justify-content-center">
-            <div class="col-md-4 col-10 col-sm-6 mt-4">
-                <div class="card bg-transparent  text-left p-4" style="border:1px solid #243055;">
-                    <div class="card-text m-2 breadcrumb bg-transparent">
-                        <div class="breadcrumb-item">اسم شرکت</div>
-                        <div class="breadcrumb-item">اسم سرویس</div>
-                    </div>
-                    <div class="card-text m-2"><b>تاریخ:</b>27/اسفند</div>
-                    <div class="card-text m-2"><b>زمان شروع:</b>14:30</div>
-                    <div class="card-text m-2"><b>زمان پایان:</b>14:30</div>
-                    <div class="card-text m-2"><b>آدرس:</b>تهرانپارس-خیابان ۱۹۶-پلاک ۱۴</div>
-                    <div class="row m-2">
-                        <button class="btn btn-outline-primary card-link">رزرو بیشتر</button>
-                        <button class="btn btn-outline-danger card-link">لغو</button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-10 col-sm-6 mt-4">
-                <div class="card bg-transparent  text-left p-4" style="border:1px solid #243055;">
-                    <div class="card-text m-2 breadcrumb bg-transparent">
-                        <div class="breadcrumb-item">اسم شرکت</div>
-                        <div class="breadcrumb-item">اسم سرویس</div>
-                    </div>
-                    <div class="card-text m-2"><b>تاریخ:</b>27/اسفند</div>
-                    <div class="card-text m-2"><b>زمان شروع:</b>14:30</div>
-                    <div class="card-text m-2"><b>زمان پایان:</b>14:30</div>
-                    <div class="card-text m-2"><b>آدرس:</b>تهرانپارس-خیابان ۱۹۶-پلاک ۱۴</div>
-                    <div class="row m-2">
-                        <button class="btn btn-outline-primary card-link">رزرو بیشتر</button>
-                        <button class="btn btn-outline-danger card-link">لغو</button>
-
+            {% for history in historys %}
+                <div class="col-md-4 col-10 col-sm-6 mt-4">
+                    <div class="card bg-transparent  text-left p-4" style="border:1px solid #243055;">
+                        <div class="card-text m-2 breadcrumb bg-transparent">
+                            <div class="breadcrumb-item">{{ history.service.business.name }}</div>
+                            <div class="breadcrumb-item">{{ history.service.name }}</div>
+                        </div>
+                        <div class="card-text m-2"><b>تاریخ:</b>{{ history.date }}</div>
+                        <div class="card-text m-2"><b>زمان شروع:</b>{{ history.sans.start_time }}</div>
+                        <div class="card-text m-2"><b>زمان پایان:</b>{{ history.sans.end_time }}</div>
+                        <div class="card-text m-2"><b>آدرس:</b>{{ history.service.business.address }}</div>
+                        <div class="card-text m-2"><b>توضیحات:</b>{{ history.description }}</div>
+                        <div class="row m-2">
+                            <a href="{% url 'ServicesPage' history.service.id %}">
+                                <button
+                                        class="btn btn-outline-primary card-link">رزرو بیشتر
+                                </button>
+                            </a>
+                            {#                        <button class="btn btn-outline-danger card-link">لغو</button>#}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-10 col-sm-6 mt-4">
-                <div class="card bg-transparent  text-left p-4" style="border:1px solid #243055;">
-                    <div class="card-text m-2 breadcrumb bg-transparent">
-                        <div class="breadcrumb-item">اسم شرکت</div>
-                        <div class="breadcrumb-item">اسم سرویس</div>
-                    </div>
-                    <div class="card-text m-2"><b>تاریخ:</b>27/اسفند</div>
-                    <div class="card-text m-2"><b>زمان شروع:</b>14:30</div>
-                    <div class="card-text m-2"><b>زمان پایان:</b>14:30</div>
-                    <div class="card-text m-2"><b>آدرس:</b>تهرانپارس-خیابان ۱۹۶-پلاک ۱۴</div>
-                    <div class="row m-2">
-                        <button class="btn btn-outline-primary card-link">رزرو بیشتر</button>
-                        <button class="btn btn-outline-danger card-link">لغو</button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-10 col-sm-6 mt-4">
-                <div class="card bg-transparent  text-left p-4" style="border:1px solid #243055;">
-                    <div class="card-text m-2 breadcrumb bg-transparent">
-                        <div class="breadcrumb-item">اسم شرکت</div>
-                        <div class="breadcrumb-item">اسم سرویس</div>
-                    </div>
-                    <div class="card-text m-2"><b>تاریخ:</b>27/اسفند</div>
-                    <div class="card-text m-2"><b>زمان شروع:</b>14:30</div>
-                    <div class="card-text m-2"><b>زمان پایان:</b>14:30</div>
-                    <div class="card-text m-2"><b>آدرس:</b>تهرانپارس-خیابان ۱۹۶-پلاک ۱۴</div>
-                    <div class="row m-2">
-                        <button class="btn btn-outline-primary card-link">رزرو بیشتر</button>
-                        <button class="btn btn-outline-danger card-link">لغو</button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-10 col-sm-6 mt-4">
-                <div class="card bg-transparent  text-left p-4" style="border:1px solid #243055;">
-                    <div class="card-text m-2 breadcrumb bg-transparent">
-                        <div class="breadcrumb-item">اسم شرکت</div>
-                        <div class="breadcrumb-item">اسم سرویس</div>
-                    </div>
-                    <div class="card-text m-2"><b>تاریخ:</b>27/اسفند</div>
-                    <div class="card-text m-2"><b>زمان شروع:</b>14:30</div>
-                    <div class="card-text m-2"><b>زمان پایان:</b>14:30</div>
-                    <div class="card-text m-2"><b>آدرس:</b>تهرانپارس-خیابان ۱۹۶-پلاک ۱۴</div>
-                    <div class="row m-2">
-                        <button class="btn btn-outline-primary card-link">رزرو بیشتر</button>
-                        <button class="btn btn-outline-danger card-link">لغو</button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-10 col-sm-6 mt-4">
-                <div class="card bg-transparent  text-left p-4" style="border:1px solid #243055;">
-                    <div class="card-text m-2 breadcrumb bg-transparent">
-                        <div class="breadcrumb-item">اسم شرکت</div>
-                        <div class="breadcrumb-item">اسم سرویس</div>
-                    </div>
-                    <div class="card-text m-2"><b>تاریخ:</b>27/اسفند</div>
-                    <div class="card-text m-2"><b>زمان شروع:</b>14:30</div>
-                    <div class="card-text m-2"><b>زمان پایان:</b>14:30</div>
-                    <div class="card-text m-2"><b>آدرس:</b>تهرانپارس-خیابان ۱۹۶-پلاک ۱۴</div>
-                    <div class="row m-2">
-                        <button class="btn btn-outline-primary card-link">رزرو بیشتر</button>
-                        <button class="btn btn-outline-danger card-link">لغو</button>
-
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+            <button class="btn btn-outline-dark mt-3">بیشتر</button>
         </div>
-        <button class="btn btn-outline-dark mt-3">بیشتر</button>
-    </div>
-    <div class="container mt-5 p-2 text-center"
-         style="border:5px solid #243055 ">
-        <h4 accesskey="#S">کسب وکار های من</h4>
+        <div class="container mt-5 p-2 text-center"
+             style="border:5px solid #243055 ">
+            <h4 accesskey="#S">کسب وکار های من</h4>
             <div class="row mt-4 justify-content-center">
-            <div class="col-md-4 col-10 col-sm-8 mt-4 ">
-                <div class="card bg-transparent  text-left p-4" style="border:1px solid  #243055;">
-                    <div class="breadcrumb bg-transparent">
-                        <div class="breadcrumb-item">دسته بندی</div>
-                        <div class="breadcrumb-item">اسم کسب وکار</div>
+                {% for business in mybusiness %}
+                    <div class="col-md-4 col-10 col-sm-8 mt-4 ">
+                        <div class="card bg-transparent  text-left p-4" style="border:1px solid  #243055;">
+                            <div class="breadcrumb bg-transparent">
+                                <div class="breadcrumb-item">{{ business.category.name }}</div>
+                                <div class="breadcrumb-item">{{ business.name }}</div>
+                            </div>
+                            <div class="row m-2">
+                                <button href="{% url 'BusinessPage' business.id %}"
+                                        class="btn btn-outline-primary card-link"> صفحه کسب وکار
+                                </button>
+                                <button class="btn btn-outline-danger card-link">حذف کسب وکار</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="row m-2">
-                        <button class="btn btn-outline-primary card-link"> صفحه کسب وکار</button>
-                        <button class="btn btn-outline-danger card-link">حذف کسب وکار</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-10 col-sm-8 mt-4 ">
-                <div class="card bg-transparent  text-left p-4" style="border:1px solid  #243055;">
-                    <div class="breadcrumb bg-transparent">
-                        <div class="breadcrumb-item">دسته بندی</div>
-                        <div class="breadcrumb-item">نام کسب وکار</div>
-                    </div>
-                    <div class="row m-2">
-                        <button class="btn btn-outline-primary card-link"> صفحه کسب وکار</button>
-                        <button class="btn btn-outline-danger card-link">حذف کسب وکار</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-10 col-sm-8 mt-4 ">
-                <div class="card bg-transparent  text-left p-4" style="border:1px solid  #243055;">
-                    <div class="breadcrumb bg-transparent">
-                        <div class="breadcrumb-item">دسته بندی</div>
-                        <div class="breadcrumb-item">نام کسب وکار</div>
-                    </div>
-                    <div class="row m-2">
-                        <button class="btn btn-outline-primary card-link"> صفحه کسب وکار</button>
-                        <button class="btn btn-outline-danger card-link">حذف کسب وکار</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-10 col-sm-8 mt-4 ">
-                <div class="card bg-transparent  text-left p-4" style="border:1px solid  #243055;">
-                    <div class="breadcrumb bg-transparent">
-                        <div class="breadcrumb-item">دسته بندی</div>
-                        <div class="breadcrumb-item">نام کسب وکار</div>
-                    </div>
-                    <div class="row m-2">
-                        <button class="btn btn-outline-primary card-link"> صفحه کسب وکار</button>
-                        <button class="btn btn-outline-danger card-link">حذف کسب وکار </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-10 col-sm-8 mt-4 ">
-                <div class="card bg-transparent  text-left p-4" style="border:1px solid  #243055;">
-                    <div class="breadcrumb bg-transparent">
-                        <div class="breadcrumb-item">دسته بندی</div>
-                        <div class="breadcrumb-item">نام کسب وکار</div>
-                    </div>
-                    <div class="row m-2">
-                        <button class="btn btn-outline-primary card-link"> صفحه کسب وکار</button>
-                        <button class="btn btn-outline-danger card-link">حذف کسب وکار</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-10 col-sm-8 mt-4 ">
-                <div class="card bg-transparent  text-left p-4" style="border:1px solid  #243055;">
-                    <div class="breadcrumb bg-transparent">
-                        <div class="breadcrumb-item">دسته بندی</div>
-                        <div class="breadcrumb-item">اسم کسب وکار</div>
-                    </div>
-                    <div class="row m-2">
-                        <button class="btn btn-outline-primary card-link"> صفحه کسب وکار</button>
-                        <button class="btn btn-outline-danger card-link">حذف کسب وکار</button>
-                    </div>
-                </div>
+                {% endfor %}
+                <button class="btn btn-outline-dark mt-3">بیشتر</button>
+
             </div>
         </div>
-        <button class="btn btn-outline-dark mt-3">بیشتر</button>
-
-    </div>
-</div>
-<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-<script src="{% static 'js/tether.js' %}"></script>
-<script src="{% static 'css/bootstrap.min.css' %}"></script>
+        <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+        <script src="{% static 'js/tether.js' %}"></script>
+        <script src="{% static 'css/bootstrap.min.css' %}"></script>
 </body>
 </html>
