@@ -30,7 +30,8 @@ urlpatterns = [
     path('account/createbusiness',views.createbusiness,name='createbusiness'),
     path('ServicePage/<int:service_id>',views.showservice,name = 'ServicesPage'),
     path('BusinessPage/<int:business_id>',views.showbusiness,name = 'BusinessPage'),
-    path('business/',views.search,name='search')
+    path('business/',views.search,name='search'),
+    path('ServicePage/timetable/',views.rendertimetable,name='timetable')
 
 
 

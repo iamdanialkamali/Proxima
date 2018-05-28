@@ -1,5 +1,7 @@
+import simplejson as simplejson
 from django.shortcuts import render
 from .models import Categories, Services, Reserves, Review, Business,Sans
+from django.http import JsonResponse, HttpResponse
 
 # Create your views here.
 categories = Categories.objects.all()
@@ -48,3 +50,28 @@ def showbusiness(requset, business_id):
     business = Business.objects.get(id=business_id)
     services = Services.objects.filter(business__id=business_id)
     return render(requset, 'businesspage.html', {'business': business, 'services': services})
+
+def rendertimetable(request):
+    print(request.method)
+
+    if request.method == 'GET':
+        timetable_id=request.GET.get('timetable_id')
+        date = request.GET.get('date')
+        print(timetable_id)
+        print(date)
+        selected_sanses = Sans.objects.filter(time_table__id=timetable_id)
+        reserved = Reserves.objects.filter(date=date).all()
+        reserved = [e.sans for e in reserved]
+        selected_sanses= [sans for sans in selected_sanses]
+        final = set(selected_sanses).difference(set(reserved))
+        print(reserved)
+        data =""
+        for i in final:
+               data +=' <div class=" time mt-md-3 mt-sm-2"><button  class="btn2 btn btn-outline-secondary  w-75" data-toggle="modal" data-target="#myModal"  id='+str(i.id)+'>'+str(i.start_time)+ 'to'+str(i.end_time)+'</button></div>'
+        return HttpResponse(data)
+
+    def book(request):
+        if(request.method=='POST'):
+            id=request.POST["id_field"]
+
+
