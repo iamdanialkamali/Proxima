@@ -164,10 +164,10 @@
                                  data-targetselector="#exampleInput3">
                                 <span class="glyphicon glyphicon-calendar"></span>
                             </div>
-                            <form action="" method="post">
+                            <form action="{% url 'timetable' %}" method="post">
                                 {% csrf_token %}
                                 <div class="form-group">
-                                    <input name="date" value="{{ date }}" type="text" class="form-control"
+                                    <input name="date" value="{{ date }}"  type="text" class="form-control"
                                            id="datepicker" placeholder="تاریخ" data-mddatetimepicker="true"
                                            data-placement="right" data-englishnumber="true"/>
                                     <input hidden name="time_table" id="time_table" type="text"

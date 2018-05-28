@@ -70,6 +70,8 @@ def rendertimetable(request):
         service_id = int(request.POST.get('service'))
         selected_sanses = Sans.objects.filter(time_table__id=timetable_id)
         reserved = Reserves.objects.filter(date=date)
+        for i in Reserves.objects.all():
+            print(i.date)
         reserved = [e.sans for e in reserved]
         selected_sanses = [sans for sans in selected_sanses]
         final = set(selected_sanses).difference(set(reserved))
@@ -91,7 +93,7 @@ def book(request):
         if (len(check_obj) == 0):
             Reserves.objects.create(user=user, sans=sans, date=date, description=description, service_id=service.id)
         else:
-            date = '1397/1/13'
+            date = '1397/01/13'
             sanes = Sans.objects.filter(time_table__id=service.timetable_id)
             reviews = Review.objects.filter(service_id=service.id)
             return render(request, 'ServicePage.html',
