@@ -61,7 +61,6 @@ class Services(models.Model):
 
 class Reserves(models.Model):
     id = models.AutoField(primary_key=True)
-    timetable = models.ForeignKey(TimeTable, on_delete=models.DO_NOTHING, )
     user = models.ForeignKey(Users, on_delete=models.DO_NOTHING)
     sans = models.ForeignKey(Sans, on_delete=models.DO_NOTHING, null=True, blank=True)
     description = models.TextField()

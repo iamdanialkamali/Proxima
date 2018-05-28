@@ -120,24 +120,6 @@
         }
     </style>
     <script>
-        {% comment %}    $("#datepicker").change(function () {
-                var date = $("#datepicker").val();
-                var timetable_id = {{ service.timetable.id }}
-                    $.ajax({
-                        url: 'timetable/',
-                        data: {
-                            'date': date,
-                            'timetable_id': timetable_id
-                        },
-                        dataType: 'json',
-                        success:function (data) {
-                            console.log(data)
-                            window.alert(data)
-                        }
-                    });
-                windows.alert(data)
-            });
-            {% endcomment %}
         $(document).ready(function () {
             $("#datepicker").change(function () {
                 var date = $("#datepicker").val().slice();
@@ -206,54 +188,45 @@
 
                         {% for sans in sanses %}
                             <div class=" time mt-md-3 mt-sm-2">
-                                <a><button class="btn2 btn btn-outline-secondary   w-100" data-toggle="modal"
-                                        data-target="#myModal"
-                                        id={{ sans.id }}  >{{ sans.start_time }} to {{ sans.end_time }}</button></a>
+                                <button type="button" class="btn btn-outline-secondary w-100" data-toggle="modal"
+                                        data-target="#{{ sans.id }}">
+                                    {{ sans.start_time }} to {{ sans.end_time }}
+                                </button>
+
+                                <!-- Modal -->
+                                <div class="modal fade" id="{{ sans.id }}" tabindex="-1" role="dialog"
+                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                you are booking sans {{ sans.start_time }} to {{ sans.end_time }}
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <a href="{% url 'book' sans.id $.("#datepicker").text() %}">
+                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         {% endfor %}
-                        <script>
-                                $("button").click(function (){
-                                    $(".modal-dk").attr("id",this.id);
-                                    $("#modal-date").html($(this).html());
-                                    // .attr('id',$(this).id());
-                                });
-
-                        </script>
-                    </div>
-                    <div class="modal" id="myModal">
-                        <div class="modal-dialog">
-                            <div class="modal-content "  >
-                                <form method="post">
-                                    {% csrf_token %}
-                                <div class="modal-header">
-                                    <button type="button" style="align-center" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">Confirmation</h4>
-
-                                </div>
-
-                                <!-- Modal body -->
-                                <div class="modal-body">
-                                    <label data-name="date_field" data-text="ssss" class="modal-dk"></label>
-                                    <label data-name="id_field" data-text="sadasdad" id="modal-date"></label>
-                                    <textarea hidden="true" id="modal-date"> </textarea>
-
-                                </div>
-
-                                <!-- Modal footer -->
-                                <div class="modal-footer">
-                                    <button acti type="submit" class="btn btn-danger" data-dismiss="modal">Confirm</button>
-                                </div>
-                                </form>
-
-                            </div>
-                        </div>
                     </div>
                 </div>
 
 
             </div>
         </div>
-
         <div class="col-12 col-sm-12 col-md-3 justify-content-center "
              style="font-size: 1em ;color:white;background-color: #243055 ">
             <h4 class="text-center mt-2"> نظرات</h4>
@@ -274,7 +247,6 @@
 
 
         </div>
-
     </div>
 
 </div>
