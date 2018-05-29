@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="dd" type="javaScript">
+    <properties>
+      <option name="frameworkName" value="jQuery" />
+      <option name="frameworkVersion" value="" />
+    </properties>
+    <CLASSES />
+    <DOCUMENTATION>
+      <root url="http://api.jquery.com" />
+    </DOCUMENTATION>
+    <SOURCES />
+  </library>
+</component>
