@@ -1,34 +1,78 @@
 {% extends 'master.html' %}
 {% load  static %}
 {% block content %}
-   <div class="row justify-content-center">
+    <div class="row justify-content-center align-items-center align-content-center">
+        <div class="card border-0 mb-5  col-md-12 col-sm-12 col-12 text-center text-light"
+             style="height: 200px ;background-color:#243055">
+            <br>
+            <br>
+            <h2 class="card-title mb-3">
+                برترین سیستم ارتباط آنلاین کسب و کار شما و مشتری
+            </h2>
+            <p>
+                به راحتی کسب و کار خود را به مشتری هایتان معرفی کنید و از سیستم رزرو آنلاین به آسانی بهره ببرید.
+            </p>
+        </div>
+    </div>
+    <div class="row mt-5 justify-content-center">
+        <h4 class="col-md-12 col-sm-12 col-12 text-right mr-5"> ویژگی های ما :</h4>
+
         <div class="col-md-4 col-sm-10 col-12">
-            <div class="card m-3">
+            <div class="card m-3 text-right">
                 <div class="card-block p-2">
-                    <h4 class="card-title">رزرو اسان</h4>
-                    <p class="card-text"><img src= "{% static 'images/calendar.png' %}" width="100" height="100" alt="online payment" style="float:right;">از هر کجا که هستید به سادگی رزرو کنید</p>
+                    <h4 class="card-title">رزرو آسان</h4>
+                    <p class="card-text"><img class="float-left" src="{% static 'images/calendar.png' %}" width="100" height="100"
+                                              alt="online payment" >از هر کجا که هستید به سادگی رزرو کنید.</p>
                 </div>
             </div>
         </div>
         <div class="col-md-4 col-sm-10 col-12">
-            <div class="card m-3">
+            <div class="card m-3 text-right">
                 <div class="card-block p-2">
                     <h4 class="card-title">یاداوری رزروها</h4>
-                    <p class="card-text"><img src="{% static 'images/reminder.jpg' %}" width="100" height="100" alt="online payment" style="float:right;">رزروهای خود رو یا یاداوری های خودکار فراموش نمی کنید</p>
+                    <p class="card-text"><img class="float-left" src="{% static 'images/reminder.jpg' %}" width="100" height="100"
+                                              alt="online payment" >رزروهای خود رو یا یاداوری های
+                        خودکار فراموش نمی کنید</p>
                 </div>
             </div>
         </div>
         <div class="col-md-4 col-sm-10 col-12">
-            <div class="card m-3">
+            <div class="card m-3 text-right" >
                 <div class="card-block p-2">
                     <h4 class="card-title">پرداخت آنلاین</h4>
-                    <p class="card-text"><img src="{% static 'images/payment.png' %}" width="100" height="100" alt="online payment" style="float:right;">هزینه رزرو خود را به صورت آنلاین پرداخت کنید</p>
+                    <p class="card-text"><img class="float-left" src="{% static 'images/payment.png' %}" width="100" height="100"
+                                              alt="online payment" >هزینه رزرو خود را به صورت آنلاین
+                        پرداخت کنید</p>
                 </div>
             </div>
         </div>
 
 
-   </div>
+    </div>
+    <footer class="pt-4 mt-4 w-100" style="background-color:rgba(170,161,191,0.38); ">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 col-12 text-center">
+                    <nav class="nav flex-column text-dark">
+                        <a class="nav-link" href="#">خانه</a>
+                        <a class="nav-link" href="#">درباره ی ما</a>
+                        <a class="nav-link" href="#">منو</a>
+                        <a class="nav-link" href="#">رزرو</a>
+                    </nav>
+                </div>
+                <div class="col-md-6 col-12 text-center">
+                    <h5 class="m-2 text-uppercase">زنبیل</h5>
+                    <div>آدرس : تهران -مستقیم - دست راست</div>
+                    <div>شماره تلفن :77456589</div>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="footer-copyright py-3 text-center">
+             2018 : Copyright ©
+        </div>
+
+    </footer>
 
 
 {% endblock content %}
