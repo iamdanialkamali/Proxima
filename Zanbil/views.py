@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from khayyam import *
 
 from .models import Categories, Services, Reserves, Review, Business, Sans, Users
 from django.shortcuts import redirect
@@ -49,12 +50,20 @@ def createbusiness(request):
 
 
 def showservice(request, service_id):
-    date = '1397/1/13'
+    today = JalaliDate.today().__str__().replace('-','/')
+    today_name = JalaliDate(JalaliDate.today()).weekdayname()
+    today_num = JalaliDate(JalaliDate.today()).weekday()
     service = Services.objects.get(id=service_id)
-    sanes = Sans.objects.filter(time_table__id=service.timetable_id)
+    selected_sanses = Sans.objects.filter(time_table__id=service.timetable.id,weekday=today_num)
+    reserved = Reserves.objects.filter(date=today)
+    reserved = [e.sans for e in reserved]
+    selected_sanses = [sans for sans in selected_sanses]
+    final = set(selected_sanses).difference(set(reserved))
+    service = Services.objects.get(id=service_id)
     reviews = Review.objects.filter(service_id=service.id)
+
     return render(request, 'ServicePage.html',
-                  {'service': service, 'sanses': sanes, 'reviews': reviews, 'date': date, 'user': user})
+                  {'service': service, 'sanses': final, 'reviews': reviews, 'date': today, 'user': user ,'today_name':today_name})
 
 
 def showbusiness(requset, business_id):
@@ -70,8 +79,6 @@ def rendertimetable(request):
         service_id = int(request.POST.get('service'))
         selected_sanses = Sans.objects.filter(time_table__id=timetable_id)
         reserved = Reserves.objects.filter(date=date)
-        for i in Reserves.objects.all():
-            print(i.date)
         reserved = [e.sans for e in reserved]
         selected_sanses = [sans for sans in selected_sanses]
         final = set(selected_sanses).difference(set(reserved))
@@ -90,14 +97,14 @@ def book(request):
         service = Services.objects.get(id=request.POST.get('service_id', ''))
         sans = Sans.objects.get(pk=sans_id)
         check_obj = Reserves.objects.filter(date=date, service_id=service.id, sans=sans)
-        if (len(check_obj) == 0):
+        if (len(check_obj) == 0 or date==''):
             Reserves.objects.create(user=user, sans=sans, date=date, description=description, service_id=service.id)
         else:
-            date = '1397/01/13'
+            today = '/'.join(JalaliDate.today().__str__().split('-'))
             sanes = Sans.objects.filter(time_table__id=service.timetable_id)
             reviews = Review.objects.filter(service_id=service.id)
             return render(request, 'ServicePage.html',
-                          {'service': service, 'sanses': sanes, 'reviews': reviews, 'date': date, 'user': user})
+                          {'service': service, 'sanses': sanes, 'reviews': reviews, 'date': today, 'user': user})
 
         mybusiness = Business.objects.filter(id=service.business.id)
         history = Reserves.objects.filter(user_id=user.id)

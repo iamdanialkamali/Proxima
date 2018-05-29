@@ -182,7 +182,7 @@
 
                 </div>
 
-                <h5 class="text-center">Timetable</h5>
+                <h5 class="text-center">{{ today_name }}</h5>
                 <div class="row mt-5 form-group">
                     <div id="buttons" class="col text-center">
                         {% for sans in sanses %}
@@ -241,7 +241,7 @@
                      style="background-color: #3affff">
                     <div class="card-body " style="background-color: #3ac0ff;color: #0f0f10">
                         <div class="row  text-center justify-content-center align-items-center ">
-                            <a style="">نام کاربری :{{ review.user_id }} </a>
+                            <a style="">نام کاربری :{{ review.user.username }} </a>
                         </div>
                         <a style="align-content: right">توضیحات:</a>
                         <p class="card-text" style="margin-top: 10px">{{ review.description }}</p>
