@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'Proxima.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'zaanbil',
+        'NAME': 'Zanbil2',
         'USER': 'postgres',
         'PASSWORD': 'proxima',
         'HOST': 'localhost',

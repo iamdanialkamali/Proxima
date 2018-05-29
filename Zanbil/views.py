@@ -3,11 +3,10 @@ from django.shortcuts import render
 
 from .models import Categories, Services, Reserves, Review, Business, Sans, Users
 from django.shortcuts import redirect
-
+from khayyam import *
 # Create your views here.
 categories = Categories.objects.all()
 user = Users.objects.get(id=1)
-
 
 def main(request):
     return render(request, 'index.html', {'categories': categories, 'user': user})
@@ -49,12 +48,17 @@ def createbusiness(request):
 
 
 def showservice(request, service_id):
-    date = '1397/1/13'
+    date = JalaliDate.today().__str__().replace('-','/')
+    day_name = JalaliDate().today().weekdayname()
     service = Services.objects.get(id=service_id)
-    sanes = Sans.objects.filter(time_table__id=service.timetable_id)
+    selected_sanses = Sans.objects.filter(time_table__id=service.timetable.id, weekday=JalaliDate.today().weekday()).order_by('start_time')
+    reserved = Reserves.objects.filter(date=date)
+    reserved = [e.sans for e in reserved]
+    selected_sanses = [sans for sans in selected_sanses]
+    final = set(selected_sanses).difference(set(reserved))
     reviews = Review.objects.filter(service_id=service.id)
     return render(request, 'ServicePage.html',
-                  {'service': service, 'sanses': sanes, 'reviews': reviews, 'date': date, 'user': user})
+                  {'service': service, 'sanses': final,'day_name':day_name, 'reviews': reviews, 'date': date, 'user': user})
 
 
 def showbusiness(requset, business_id):
@@ -66,20 +70,24 @@ def showbusiness(requset, business_id):
 def rendertimetable(request):
     if request.method == 'POST':
         timetable_id = request.POST.get('time_table', '')
-        date = request.POST.get('date', '')
         service_id = int(request.POST.get('service'))
-        selected_sanses = Sans.objects.filter(time_table__id=timetable_id)
+        date = request.POST.get('date', '')
+        date_splited = date.split('/')
+        day=JalaliDate(int(date_splited[0]),int(date_splited[1]),int(date_splited[2]))
+        service = Services.objects.get(id=service_id)
+        selected_sanses = Sans.objects.filter(time_table__id=timetable_id,weekday=day.weekday())
         reserved = Reserves.objects.filter(date=date)
-        for i in Reserves.objects.all():
-            print(i.date)
         reserved = [e.sans for e in reserved]
         selected_sanses = [sans for sans in selected_sanses]
-        final = set(selected_sanses).difference(set(reserved))
-        service = Services.objects.get(id=service_id)
+        if (JalaliDate.today() < day):
+            final = set(selected_sanses).difference(set(reserved))
+        else:
+            date = JalaliDate.today().__str__().replace('-', '/')
+            day = JalaliDate().today()
+            final = []
         reviews = Review.objects.filter(service_id=service.id)
         return render(request, 'ServicePage.html',
-                      {'service': service, 'sanses': final, 'reviews': reviews, 'date': date, 'user': user})
-
+                          {'service': service, 'sanses': final,'day_name':day.weekdayname(), 'reviews': reviews, 'date': date, 'user': user})
 
 def book(request):
     if (request.method == 'POST'):
@@ -93,12 +101,13 @@ def book(request):
         if (len(check_obj) == 0):
             Reserves.objects.create(user=user, sans=sans, date=date, description=description, service_id=service.id)
         else:
-            date = '1397/01/13'
+            date = JalaliDate.today().__str__().replace('-', '/')
+            day_name = JalaliDate().today().weekdayname()
             sanes = Sans.objects.filter(time_table__id=service.timetable_id)
             reviews = Review.objects.filter(service_id=service.id)
             return render(request, 'ServicePage.html',
-                          {'service': service, 'sanses': sanes, 'reviews': reviews, 'date': date, 'user': user})
+                          {'service': service, 'sanses': sanes,'day_name':day_name, 'reviews': reviews, 'date': date, 'user': user})
 
         mybusiness = Business.objects.filter(id=service.business.id)
-        history = Reserves.objects.filter(user_id=user.id)
+        history = Reserves.objects.filter(user_id=user.id).order_by('date')
         return render(request, 'accounts.html', {'user': user, 'historys': history, 'mybusiness': mybusiness})

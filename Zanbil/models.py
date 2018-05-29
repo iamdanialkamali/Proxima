@@ -42,7 +42,7 @@ class Sans(models.Model):
     start_time = models.FloatField()
     end_time = models.FloatField()
     time_table = models.ForeignKey(to=TimeTable, on_delete=models.DO_NOTHING)
-
+    weekday= models.PositiveIntegerField(null=True)
 
 class Services(models.Model):
     id = models.AutoField(primary_key=True)

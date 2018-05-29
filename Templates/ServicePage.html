@@ -177,12 +177,12 @@
 
                 </div>
 
-                <h5 class="text-center">Timetable</h5>
+                <h5 class="text-center">{{ day_name }}</h5>
                 <div class="row mt-5 form-group">
                     <div id="buttons" class="col text-center">
                         {% for sans in sanses %}
                             <div class=" time mt-md-3 mt-sm-2">
-                                <button type="button" class="btn btn-outline-secondary w-100" data-toggle="modal"
+                                <button type="button" class="btn btn-outline-secondary w-100 " data-toggle="modal"
                                         data-target="#{{ forloop.counter }}">
                                     {{ sans.start_time }} to {{ sans.end_time }}
                                 </button>
