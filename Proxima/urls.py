@@ -15,23 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Zanbil import views
+from Zanbil import views,BusinessPageController,BusinessSelectPageController,AccountPageController,ServicePageController,SearchController
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.main, name='main'),
-    path('Businesses/<int:category_id>', views.Businessesspage, name='Businesses'),
-    path('beautysalon/', views.beautysalon, name='beautysalon'),
-    path('cafe/', views.beautysalon, name='cafe'),
-    path('doctor/', views.beautysalon, name='doctor'),
-    path('hotel/', views.beautysalon, name='hotel'),
-    path('resturant/', views.beautysalon, name='resturant'),
-    path('account/<int:user_id>', views.account, name='account'),
-    path('account/createbusiness', views.createbusiness, name='createbusiness'),
-    path('ServicePage/<int:service_id>', views.showservice, name='ServicesPage'),
-    path('BusinessPage/<int:business_id>', views.showbusiness, name='BusinessPage'),
-    path('business/', views.search, name='search'),
-    path('ServicePage/timetable/', views.rendertimetable, name='timetable'),
-    path('book/', views.book, name='book')
+    path('Businesses/<int:category_id>', BusinessSelectPageController.BusinessSelectPage.Render, name='Businesses'),
+    path('account/<int:user_id>', AccountPageController.AccountPageController.Render, name='account'),
+    path('ServicePage/<int:service_id>', ServicePageController.ServicePageController.Render, name='ServicesPage'),
+    path('BusinessPage/<int:business_id>', BusinessPageController.BusinessPageController.Render, name='BusinessPage'),
+    path('business/',SearchController.SearchController.Search , name='search'),
+    path('ServicePage/timetable/', ServicePageController.ServicePageController.RenderTimeTable, name='timetable'),
+    path('book/', ServicePageController.ServicePageController.Book, name='book')
 
 ]
