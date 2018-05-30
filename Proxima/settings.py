@@ -58,7 +58,7 @@ ROOT_URLCONF = 'Proxima.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-'DIRS': [ os.path.join(BASE_DIR, 'Templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'Templates')],
 
         'APP_DIRS': True,
         'OPTIONS': {
@@ -74,14 +74,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Proxima.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
+
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Zanbil2',
+        'NAME': 'zaanbil',
         'USER': 'postgres',
         'PASSWORD': 'proxima',
         'HOST': 'localhost',
@@ -106,7 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/

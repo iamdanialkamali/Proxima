@@ -27,7 +27,7 @@ class Business(models.Model):
     score = models.FloatField()
     address = models.TextField(max_length=500)
     description = models.TextField(max_length=600, default='test')
-    category = models.OneToOneField(Categories, on_delete=models.DO_NOTHING)
+    category = models.ForeignKey(Categories, on_delete=models.DO_NOTHING)
 
 
 class TimeTable(models.Model):

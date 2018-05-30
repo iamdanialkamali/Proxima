@@ -243,7 +243,11 @@
                         <a style=""></a>
                     </div>
                 </div>
-            {% endfor %}    </div>
+            {% endfor %}
+            <a href="{% url 'comment' service.id %}">
+                <button class="btn btn-info">نظر</button>
+            </a>
+        </div>
 
     </div>
 

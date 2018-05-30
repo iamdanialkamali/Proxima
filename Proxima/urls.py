@@ -26,6 +26,7 @@ urlpatterns = [
     path('BusinessPage/<int:business_id>', BusinessPageController.BusinessPageController.Render, name='BusinessPage'),
     path('business/',SearchController.SearchController.Search , name='search'),
     path('ServicePage/timetable/', ServicePageController.ServicePageController.RenderTimeTable, name='timetable'),
-    path('book/', ServicePageController.ServicePageController.Book, name='book')
+    path('book/', ServicePageController.ServicePageController.Book, name='book'),
+    path('comment/<int:id>/', views.comment, name='comment'),
 
 ]
