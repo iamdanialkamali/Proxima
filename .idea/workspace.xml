@@ -2,23 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7f87a1c-c842-405e-b0d6-ef312cfa7792" name="Default" comment=" single responsibility principle added">
-      <change afterPath="$PROJECT_DIR$/Zanbil/AccountPageController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zanbil/BusinessPageController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zanbil/BusinessSelectPageController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zanbil/SearchController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Zanbil/ServicePageController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Proxima.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Proxima.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proxima/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proxima/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/Businesses.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/BusinessSelectPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/accounts.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/AccountPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/businesspage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/BusinessPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/cafe.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/cafe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/doctor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/hotel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/hotel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/restaurant.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/restaurant.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Templates/ServicePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/ServicePage.html" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,13 +17,34 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Proxima$Unnamed.coverage" NAME="python Coverage Results" MODIFIED="1527625712697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="ServicePage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Templates/ServicePage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5610">
-              <caret line="330" column="7" selection-start-line="330" selection-start-column="7" selection-end-line="330" selection-end-column="7" />
+            <state relative-caret-position="1665">
+              <caret line="244" column="21" selection-start-line="244" selection-start-column="21" selection-end-line="244" selection-end-column="21" />
+              <folding>
+                <element signature="n#head#0;n#html#0;n#!!top" />
+                <element signature="n#script#4;n#div#0;n#body#0;n#html#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,8 +52,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Zanbil/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="180">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="e#0#36#0" expanded="true" />
               </folding>
@@ -51,11 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServicePageController.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Zanbil/ServicePageController.py">
+      <file leaf-file-name="AccountPageController.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Zanbil/AccountPageController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="62" column="64" selection-start-line="62" selection-start-column="64" selection-end-line="62" selection-end-column="64" />
+            <state relative-caret-position="105">
+              <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -63,10 +73,34 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="ServicePageController.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Zanbil/ServicePageController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#243#1171#0" />
+                <element signature="e#1215#2508#0" />
+                <element signature="e#2541#3520#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Templates/includes/forms.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="AccountPage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Templates/AccountPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
+            <state relative-caret-position="285">
               <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
             </state>
           </provider>
@@ -75,8 +109,8 @@
       <file leaf-file-name="BusinessPageController.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Zanbil/BusinessPageController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="180">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -87,7 +121,7 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Proxima/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
+            <state relative-caret-position="345">
               <caret line="23" column="102" selection-start-line="23" selection-start-column="102" selection-end-line="23" selection-end-column="102" />
               <folding>
                 <element signature="e#631#663#0" expanded="true" />
@@ -99,8 +133,20 @@
       <file leaf-file-name="BusinessSelectPageController.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Zanbil/BusinessSelectPageController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="105">
               <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchController.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Zanbil/SearchController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -137,7 +183,6 @@
         <option value="$PROJECT_DIR$/Proxima/settings.py" />
         <option value="$PROJECT_DIR$/Zanbil/models.py" />
         <option value="$PROJECT_DIR$/Zanbil/migrations/0022_sans_weekday.py" />
-        <option value="$PROJECT_DIR$/Templates/ServicePage.html" />
         <option value="$PROJECT_DIR$/Templates/businesspage.html" />
         <option value="$PROJECT_DIR$/Templates/master.html" />
         <option value="$PROJECT_DIR$/Templates/accounts.html" />
@@ -152,6 +197,7 @@
         <option value="$PROJECT_DIR$/Templates/AccountPage.html" />
         <option value="$PROJECT_DIR$/Zanbil/views.py" />
         <option value="$PROJECT_DIR$/Zanbil/ServicePageController.py" />
+        <option value="$PROJECT_DIR$/Templates/ServicePage.html" />
       </list>
     </option>
   </component>
@@ -165,10 +211,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="278" />
-    <option name="y" value="115" />
-    <option name="width" value="837" />
-    <option name="height" value="718" />
+    <option name="x" value="683" />
+    <option name="y" value="22" />
+    <option name="width" value="683" />
+    <option name="height" value="746" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -176,17 +222,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="Proxima" type="cbb8eebc:String" user="Proxima" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -207,7 +242,24 @@
             <path>
               <item name="Proxima" type="b2602c69:ProjectViewProjectNode" />
               <item name="Proxima" type="462c0819:PsiDirectoryNode" />
+              <item name="Templates" type="462c0819:PsiDirectoryNode" />
+              <item name="includes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Proxima" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proxima" type="462c0819:PsiDirectoryNode" />
               <item name="Zanbil" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="Proxima" type="cbb8eebc:String" user="Proxima" />
             </path>
           </expand>
           <select />
@@ -216,6 +268,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -238,7 +292,7 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="C:\Program Files (x86)\Python36-32\python.exe" />
+      <option name="SDK_HOME" value="/usr/bin/python3.6" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -256,7 +310,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="40d1575f-ad39-455f-8b99-70f6b568e7a0" name="Default" comment="" />
+      <changelist id="c7f87a1c-c842-405e-b0d6-ef312cfa7792" name="Default" comment=" single responsibility principle added" />
       <created>1524510178633</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -322,7 +376,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <frame x="0" y="22" width="1366" height="746" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3288889" />
@@ -330,39 +384,27 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3288889" />
       <window_info anchor="bottom" id="Python Console" order="11" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3288889" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3288889" />
       <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532943" />
+      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="0" visible="true" weight="0.12386707" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info content_ui="combo" id="Database" order="0" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3288889" />
       <window_info anchor="right" id="SciView" order="5" />
       <window_info anchor="right" id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532943" />
-      <window_info anchor="right" id="SciView" order="5" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3288889" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3288889" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3288889" />
       <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.3288889" />
-      <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="right" id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Database" order="0" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3288889" />
-      <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info anchor="bottom" id="Python Console" order="11" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -379,13 +421,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Zanbil/ServicePageController.py</url>
-          <line>9</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -397,6 +432,29 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Zanbil/BusinessSelectPageController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Zanbil/ServicePageController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="62" column="64" selection-start-line="62" selection-start-column="64" selection-end-line="62" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#243#1171#0" />
+            <element signature="e#1215#2508#0" />
+            <element signature="e#2541#3520#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Proxima/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -469,13 +527,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/site-packages/django/db/models/manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="176" selection-start-line="176" selection-end-line="176" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/site-packages/django/db/models/manager.py" />
     <entry file="file://$PROJECT_DIR$/Templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -493,76 +545,16 @@
     <entry file="file://$PROJECT_DIR$/Templates/js/calendar.js" />
     <entry file="file://$PROJECT_DIR$/Templates/js/jquery.Bootstrap-PersianDateTimePicker.js" />
     <entry file="file://$PROJECT_DIR$/Templates/js/jquery-2.1.4.js" />
-    <entry file="file://$USER_HOME$/Desktop/Views/PersianDateTimePickerDemo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="11" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/site-packages/django/core/handlers/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="156" selection-start-line="156" selection-end-line="156" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/site-packages/django/contrib/staticfiles/handlers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/wsgiref/handlers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="137" selection-start-line="137" selection-end-line="137" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/site-packages/django/core/servers/basehttp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="153" selection-start-line="153" selection-end-line="153" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/socketserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="642" selection-start-line="642" selection-end-line="642" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/threading.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="863" selection-start-line="863" selection-end-line="863" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/site-packages/django/utils/deprecation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="97" selection-start-line="97" selection-end-line="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/site-packages/django/core/handlers/exception.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="37" selection-start-line="37" selection-end-line="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/site-packages/django/core/handlers/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="125" selection-start-line="125" selection-end-line="125" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Views/PersianDateTimePickerDemo.html" />
+    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/site-packages/django/core/handlers/wsgi.py" />
+    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/site-packages/django/contrib/staticfiles/handlers.py" />
+    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/wsgiref/handlers.py" />
+    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/site-packages/django/core/servers/basehttp.py" />
+    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/socketserver.py" />
+    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/threading.py" />
+    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/site-packages/django/utils/deprecation.py" />
+    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/site-packages/django/core/handlers/exception.py" />
+    <entry file="file://C:/Program Files (x86)/Python36-32/Lib/site-packages/django/core/handlers/base.py" />
     <entry file="file://$PROJECT_DIR$/Zanbil/migrations/0023_merge_20180529_1314.py" />
     <entry file="file://$PROJECT_DIR$/Proxima/settings.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -571,9 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Zanbil/migrations/0021_auto_20180528_2104.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Zanbil/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -581,47 +570,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Zanbil/migrations/0022_sans_weekday.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Proximafinal/Templates/ServicePage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="68" lean-forward="true" selection-end-line="330" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Proximafinal/Templates/Businesses.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="43" lean-forward="true" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Proximafinal/Templates/businesspage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="31" lean-forward="true" selection-end-line="135" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Proximafinal/Templates/master.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="67" selection-end-line="366" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/Proximafinal/Templates/accounts.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" lean-forward="true" selection-end-line="83" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/Desktop/Proximafinal/Templates/ServicePage.html" />
+    <entry file="file://$USER_HOME$/Desktop/Proximafinal/Templates/Businesses.html" />
+    <entry file="file://$USER_HOME$/Desktop/Proximafinal/Templates/businesspage.html" />
+    <entry file="file://$USER_HOME$/Desktop/Proximafinal/Templates/master.html" />
+    <entry file="file://$USER_HOME$/Desktop/Proximafinal/Templates/accounts.html" />
     <entry file="file://$PROJECT_DIR$/Templates/BusinessSelectPage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -643,9 +596,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/AccountPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/ServicePage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1665">
+          <caret line="244" column="21" selection-start-line="244" selection-start-column="21" selection-end-line="244" selection-end-column="21" />
+          <folding>
+            <element signature="n#head#0;n#html#0;n#!!top" />
+            <element signature="n#script#4;n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Zanbil/AccountPageController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="105">
           <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
@@ -655,8 +626,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Zanbil/SearchController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="120">
           <caret line="8" column="34" lean-forward="true" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Zanbil/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Proxima/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="102" selection-start-line="23" selection-start-column="102" selection-end-line="23" selection-end-column="102" />
+          <folding>
+            <element signature="e#631#663#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Zanbil/BusinessSelectPageController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
@@ -665,65 +666,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Zanbil/BusinessPageController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="180">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Templates/ServicePage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5610">
-          <caret line="330" column="7" selection-start-line="330" selection-start-column="7" selection-end-line="330" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Zanbil/BusinessSelectPageController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Proxima/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="23" column="102" selection-start-line="23" selection-start-column="102" selection-end-line="23" selection-end-column="102" />
-          <folding>
-            <element signature="e#631#663#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Templates/AccountPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="19" column="37" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Zanbil/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Zanbil/ServicePageController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="62" column="64" selection-start-line="62" selection-start-column="64" selection-end-line="62" selection-end-column="64" />
+        <state relative-caret-position="225">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#243#1171#0" />
+            <element signature="e#1215#2508#0" />
+            <element signature="e#2541#3520#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Templates/includes/forms.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
     </entry>
