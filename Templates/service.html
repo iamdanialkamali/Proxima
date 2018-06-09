@@ -1,0 +1,115 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block stylesheet %}
+{% endblock %}
+{% block style %}
+        .col{
+        padding-left: .7%;
+        padding-right:.7%;
+
+        }
+
+{% endblock %}
+{% block slider %}{% endblock %}
+{% block content %}
+
+    <div class="row">
+
+
+        <div class="col-md-3 mb-5">
+            <div class="card">
+                <img class="card-img-top img-fluid" src="{% static 'img/Dark-Blue-Plain-Background.jpg' %}">
+                <div class="card-body">
+                    test text
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top img-fluid" src="{% static 'img/Dark-Blue-Plain-Background.jpg' %}">
+                <div class="card-body">
+                    test text
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-8 align-items-center">
+            <div class="row p-4 rounded border " style="background-color:rgba(50,206,253,0.06)" >
+                <div class="col-4 text-right">
+                    <i class="fas fa-arrow-right"></i>
+                    Next Week
+                </div>
+                <div class="col-4 text-center"><h3>This Week</h3>
+                <div class="form-group">
+                        <label class="sr-only" for="exampleInput3">تاریخ</label>
+                        <div class="input-group">
+                            <form action="{% url 'timetable' %}" method="post">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <input name="date" value="{{ date }}" type="text" class="form-control"
+                                           id="datepicker" placeholder="تاریخ" data-mddatetimepicker="true"
+                                           data-placement="right" data-englishnumber="true"/>
+                                    <input hidden name="time_table" id="time_table" type="text"
+                                           value={{ service.timetable.id }}>
+                                    <input hidden name="service" id="service" type="text" value={{ service.id }}>
+                                    <button class="btn-primary mt-3" id="setdate" type="submit">مشاهده سانس ها</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    Last Week
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+            </div>
+            <div class="row mt-5 p-1 border rounded "
+             style="background-color:rgba(50,206,253,0.06)">
+                {% for day in days %}
+                <div class="col text-center" id="Mon">
+                    <p style="font-size: 1em">MON</p>
+                    {% for sans in day %}
+                    <div class=" time mt-md-3 mt-sm-2">
+                        <button  class="btn btn-outline-info  w-100" data-toggle="modal"
+                                        data-target="#{{ forloop.counter }}" ><a>{{sans.sansdata.start_time}}</a><a>to</a><a>{{ sans.sansdata.end_time }}</a></button>
+                    </div>
+                        <!-- Modal -->
+                                <div class="modal fade" id="{{ forloop.counter }}" tabindex="-1" role="dialog"
+                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                you are booking sans {{ sans.start_time }} to {{ sans.end_time }}
+                                            </div>
+                                            <div class="modal-footer">
+                                                <form method="post" action="{% url 'book' %}">
+                                                    {% csrf_token %}
+                                                    <label>توضیحات</label>
+                                                    <input hidden name="service_id" type="text"
+                                                           value="{{ service.id }}">
+                                                    <input type="text" name="description">
+                                                    <input name="date" hidden value="{{ date }}">
+                                                    <input name="sans_id" hidden value="{{ sans.sansdata.id }}">
+                                                    <button class="btn btn-secondary" data-dismiss="modal">
+                                                        Close
+                                                    </button>
+                                                    <button class="btn btn-primary" type="submit">Save changes</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        {% endfor %}
+                            </div>
+                      {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

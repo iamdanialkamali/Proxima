@@ -1,69 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c7f87a1c-c842-405e-b0d6-ef312cfa7792" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Proxima.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Proxima.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proxima/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proxima/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proxima/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proxima/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Proxima/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/Proxima/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/AccountPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/AccountPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/BusinessPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/BusinessPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/BusinessSelectPage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/BusinessSelectPage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/ServicePage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/ServicePage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/cafe.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/cafe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/createbusiness.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/createbusiness.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/css/BYekan.css" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/css/BYekan.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/css/ionicons.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/css/ionicons.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/doctor.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/doctor.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/homepage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/hotel.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/hotel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/master.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/master.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/reserveSucces.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/reserveSucces.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Templates/restaurant.html" beforeDir="false" afterPath="$PROJECT_DIR$/Templates/restaurant.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/AccountPageController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/AccountPageController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/BusinessPageController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/BusinessPageController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/BusinessSelectPageController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/BusinessSelectPageController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/SearchController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/SearchController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/ServicePageController.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/ServicePageController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0002_auto_20180424_0003.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0002_auto_20180424_0003.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0003_users_last_name.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0003_users_last_name.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0004_users_national_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0004_users_national_code.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0005_users_history.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0005_users_history.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0006_auto_20180524_2301.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0006_auto_20180524_2301.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0007_auto_20180524_2324.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0007_auto_20180524_2324.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0008_services_business.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0008_services_business.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0009_auto_20180524_2345.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0009_auto_20180524_2345.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0010_business_owner.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0010_business_owner.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0011_remove_users_history.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0011_remove_users_history.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0012_auto_20180526_1613.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0012_auto_20180526_1613.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0013_pics.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0013_pics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0014_pics_name.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0014_pics_name.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0015_auto_20180527_1813.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0015_auto_20180527_1813.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0016_auto_20180527_1815.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0016_auto_20180527_1815.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0017_auto_20180527_1816.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0017_auto_20180527_1816.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0018_auto_20180527_1906.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0018_auto_20180527_1906.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0019_auto_20180527_2313.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0019_auto_20180527_2313.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0020_auto_20180528_2052.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0020_auto_20180528_2052.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0021_auto_20180528_2104.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0021_auto_20180528_2104.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/migrations/0022_sans_weekday.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/migrations/0022_sans_weekday.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Zanbil/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Zanbil/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/BYekan.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/BYekan.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/ionicons.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/ionicons.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/popper.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/popper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/popper.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/tether.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/tether.js" afterDir="false" />
-    </list>
+    <list default="true" id="c7f87a1c-c842-405e-b0d6-ef312cfa7792" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,10 +48,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ServicePageController.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ServicePageController.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Zanbil/ServicePageController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="-612">
               <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
             </state>
           </provider>
@@ -133,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Zanbil/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="74" column="29" lean-forward="true" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
+            <state relative-caret-position="267">
+              <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
               <folding>
                 <element signature="e#0#51#0" expanded="true" />
               </folding>
@@ -148,7 +86,7 @@
       <file leaf-file-name="BusinessPageController.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Zanbil/BusinessPageController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="816">
+            <state relative-caret-position="612">
               <caret line="48" selection-start-line="48" selection-end-line="48" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
@@ -197,7 +135,6 @@
         <option value="$PROJECT_DIR$/Proxima/urls.py" />
         <option value="$PROJECT_DIR$/Templates/AccountPage.html" />
         <option value="$PROJECT_DIR$/Templates/restaurant.html" />
-        <option value="$PROJECT_DIR$/Zanbil/models.py" />
         <option value="$PROJECT_DIR$/Zanbil/views.py" />
         <option value="$PROJECT_DIR$/Zanbil/BusinessPageController.py" />
         <option value="$PROJECT_DIR$/Proxima/settings.py" />
@@ -206,6 +143,7 @@
         <option value="$PROJECT_DIR$/Templates/service.html" />
         <option value="$PROJECT_DIR$/Templates/ServicePage.html" />
         <option value="$PROJECT_DIR$/Zanbil/ServicePageController.py" />
+        <option value="$PROJECT_DIR$/Zanbil/models.py" />
       </list>
     </option>
   </component>
@@ -389,12 +327,18 @@
       <option name="project" value="LOCAL" />
       <updated>1527626885795</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Show AllWeekdays Done&#10;&#10;next and last Reamin">
+      <created>1528571793488</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1528571793489</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3288889" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
@@ -403,7 +347,7 @@
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3288889" />
       <window_info anchor="bottom" id="Terminal" order="12" />
-      <window_info anchor="right" content_ui="combo" id="Project" order="0" weight="0.2532943" />
+      <window_info active="true" anchor="right" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532943" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info content_ui="combo" id="Database" order="0" weight="0.25" />
       <window_info anchor="right" id="SciView" order="5" />
@@ -459,7 +403,8 @@
     <MESSAGE value="timetable render problem fix" />
     <MESSAGE value="back syncronized with front" />
     <MESSAGE value=" single responsibility principle Confirmed" />
-    <option name="LAST_COMMIT_MESSAGE" value=" single responsibility principle Confirmed" />
+    <MESSAGE value="Show AllWeekdays Done&#10;&#10;next and last Reamin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Show AllWeekdays Done&#10;&#10;next and last Reamin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -707,16 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Zanbil/BusinessPageController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Templates/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -734,30 +669,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Zanbil/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Zanbil/migrations/0023_auto_20180609_2236.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Zanbil/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="74" column="29" lean-forward="true" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -792,8 +707,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Zanbil/ServicePageController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="-612">
           <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Zanbil/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Zanbil/BusinessPageController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Zanbil/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="34" column="33" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
