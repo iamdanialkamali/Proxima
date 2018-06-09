@@ -11,3 +11,5 @@ user = Users.objects.get(id=1)
 def main(request):
     return render(request, 'index.html', {'categories': categories, 'user': user})
 
+def test(request):
+    return render(request,'service.html')

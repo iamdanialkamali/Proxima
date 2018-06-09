@@ -17,9 +17,11 @@
         </div>
     </div>
 
-    <div class="container"><a href="#">
-        <button class="btn btn-primary">ساخب کسب وکار جدید</button>
-    </a></div>
+    <div class="container">
+        <a class="float-right" href="{% url 'createBusiness' user.id %}">
+            <button class="btn btn-primary">ساخب کسب وکار جدید</button>
+        </a>
+    </div>
 
     <div class="container mt-5 p-2 text-center"
          style="border:5px solid #243055; ">
@@ -49,7 +51,7 @@
                 </div>
             {% endfor %}
         </div>
-            <button class="btn btn-outline-dark mt-3">بیشتر</button>
+        <button class="btn btn-outline-dark mt-3">بیشتر</button>
 
     </div>
     <div class="container mt-5 p-2 text-center"
@@ -64,16 +66,16 @@
                             <div class="breadcrumb-item">{{ business.name }}</div>
                         </div>
                         <div class="row m-2">
-                            <button href="{% url 'BusinessPage' business.id %}"
-                                    class="btn btn-outline-primary card-link"> صفحه کسب وکار
-                            </button>
-                            <button class="btn btn-outline-danger card-link">حذف کسب وکار</button>
+                            <a href="{% url 'BusinessPage' business.id %}">
+                                <button class="btn btn-outline-primary card-link m-2"> صفحه کسب وکار</button>
+                            </a>
+                            <button class="btn btn-outline-danger card-link m-2">حذف کسب وکار</button>
                         </div>
                     </div>
                 </div>
             {% endfor %}
         </div>
-            <button class="btn btn-outline-dark mt-3">بیشتر</button>
+        <button class="btn btn-outline-dark mt-3">بیشتر</button>
 
     </div>
 

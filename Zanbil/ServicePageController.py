@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from khayyam import JalaliDate
-
+from datetime import timedelta
 from Zanbil.models import Services, Sans, Reserves, Review, Business
 from Zanbil.views import user
 
@@ -8,20 +8,32 @@ from Zanbil.views import user
 class ServicePageController:
     def Render(request, service_id):
         date = JalaliDate.today().__str__().replace('-', '/')
-        day_name = JalaliDate().today().weekdayname()
+        week_start_date = JalaliDate.today()-timedelta(days=JalaliDate.today().weekday())
+        weekday_date=week_start_date
+        this_week_days = []
+        for i in range(7):
+            weekday_date.__str__().replace('-','/')
+            this_week_days.append(weekday_date.__str__().replace('-','/'))
+            weekday_date = weekday_date + timedelta(1)
         service = Services.objects.get(id=service_id)
-        selected_sanses = Sans.objects.filter(time_table__id=service.timetable.id,
-                                              weekday=JalaliDate.today().weekday()).order_by('start_time')
-        print(date.split())
-        reserved = Reserves.objects.filter(date__contains=date)
-        reserved = [e.sans for e in reserved]
-        #print(reserved)
-        selected_sanses = [sans for sans in selected_sanses]
-        final = set(selected_sanses).difference(set(reserved))
-        #print(final)
-        reviews = Review.objects.filter(service_id=service.id)
+        selected_sanses = Sans.objects.filter(time_table__id=service.timetable.id).order_by('start_time')
+        sanses = [[],[],[],[],[],[],[]]
+        reserved_sanses = Reserves.objects.filter(date__in=this_week_days)
+        #print(reserved_sanses)
+        #reserved_sanses = [e.sans for e in reserved_sanses]
+       # print(reserved_sanses)
+        for sans in selected_sanses:
+            is_reserved=False
+            for reserved in reserved_sanses:
+                if(sans.id==reserved.sans.id):
+                    is_reserved=True
+            sanses[sans.weekday].append(SansContext(sans,is_reserved))
+
+        #print(sanses)
+
+
         return render(request, 'ServicePage.html',
-                      {'service': service, 'sanses': final, 'day_name': day_name, 'reviews': reviews, 'date': date,
+                      {'service': service, 'days': sanses, 'date': date,
                        'user': user})
 
     def RenderTimeTable(request):
@@ -31,12 +43,33 @@ class ServicePageController:
             date = request.POST.get('date', '')
             date_splited = date.split('/')
             day = JalaliDate(int(date_splited[0]), int(date_splited[1]), int(date_splited[2]))
+            week_start_date = day - timedelta(days=JalaliDate.today().weekday())
+            weekday_date = week_start_date
+            this_week_days = []
+            for i in range(7):
+                weekday_date.__str__().replace('-', '/')
+                this_week_days.append(weekday_date.__str__().replace('-', '/'))
+                weekday_date = weekday_date + timedelta(1)
             service = Services.objects.get(id=service_id)
-            selected_sanses = Sans.objects.filter(time_table__id=timetable_id, weekday=day.weekday())
-            print(date.split())
-            reserved = Reserves.objects.filter(date=date)
-            reserved = [e.sans for e in reserved]
-            print(reserved)
+            selected_sanses = Sans.objects.filter(time_table__id=service.timetable.id).order_by('start_time')
+            sanses = [[], [], [], [], [], [], []]
+            reserved_sanses = Reserves.objects.filter(date__in=this_week_days)
+            print(reserved_sanses)
+            # reserved_sanses = [e.sans for e in reserved_sanses]
+            # print(reserved_sanses)
+            for sans in selected_sanses:
+                is_reserved = False
+                for reserved in reserved_sanses:
+                    if (sans.id == reserved.sans.id):
+                        is_reserved = True
+                sanses[sans.weekday].append(SansContext(sans, is_reserved))
+
+            print(sanses)
+
+            return render(request, 'ServicePage.html',
+                          {'service': service, 'days': sanses, 'date': date,
+                           'user': user})
+
             selected_sanses = [sans for sans in selected_sanses]
             if (JalaliDate.today() <= day):
                 final = set(selected_sanses).difference(set(reserved))
@@ -44,9 +77,8 @@ class ServicePageController:
                 date = JalaliDate.today().__str__().replace('-', '/')
                 day = JalaliDate().today()
                 final = []
-            reviews = Review.objects.filter(service_id=service.id)
             return render(request, 'ServicePage.html',
-                          {'service': service, 'sanses': final, 'day_name': day.weekdayname(), 'reviews': reviews,
+                          {'service': service, 'sanses': final, 'day_name': day.weekdayname(),
                            'date': date, 'user': user})
 
     def Book(request):
@@ -66,4 +98,10 @@ class ServicePageController:
             else:
                 return ServicePageController.Render(request,service.id)
 
+class SansContext:
+    def __init__(self,sans,reserved):
+        self.sansdata = sans
+        self.is_reserved = reserved
+    def __str__(self):
+        return (str(self.sans) + str(self.is_reserved))
 

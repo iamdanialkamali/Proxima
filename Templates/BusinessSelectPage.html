@@ -1,7 +1,9 @@
 
 {% extends 'master.html' %}
 {% load static %}
-
+{% block title %}
+{{ category_name }}
+{% endblock %}
 {% block slider %}
     <div class="container">
         <div class="row  " style="height: 500px;">
@@ -22,14 +24,17 @@
 {% endblock %}
 {% block content %}
 
-    <div class="container" style="background-color:rgba(215,249,255,0.36)">
+    <div class="container-fluid text-right p-5" style="background-color:rgba(215,249,255,0.36)">
         <div class="row justify-content-center">
             {% for business in category_businesses %}
                 <div class="bg-transparent col-md-4 col-sm-10 col-12 fadeInanim ">
                     <div class="bg-transparent card m-3">
                         <img class="card-img-top" src=" {% static 'images/atmosfera1.jpg' %}" alt="Card image cap">
                         <div class="card-block p-2">
-                            <h4 class="card-title">{{ business.name }}</h4>
+                            <div class="breadcrumb">
+                                <div class="breadcrumb-item">{{ business.name }}</div>
+                                <div class="breadcrumb-item">{{ business.score }} </div>
+                            </div>
                             <p class="card-text">{{ business.description }}</p>
                             <a href="{% url 'BusinessPage' business.id %}" class="btn btn-info btn-block">بیشتر...</a>
                         </div>

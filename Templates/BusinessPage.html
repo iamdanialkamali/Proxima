@@ -1,65 +1,132 @@
 {% extends 'master.html' %}
-{% load static%}
+{% load static %}
+{% block title %}
+    Business Page
+{% endblock %}
 {% block slider %}
 
 {% endblock %}
 {% block content %}
-<body>
-<div class="container-fluid " >
-    <div class="row">
-        <img class="img-fluid w-100 h-50" src="{% static 'img/2.jpg' %}" alt="">
-    </div>
-    <div class="col-md-12  text-center">
-        <div class="card mt-3 p-3">
-            <div class="card-block">
-                <h5 class="card-title">{{ business.name }}</h5>
-                <p class="card-text">{{ business.description }}</p>
-            </div>
+    <body>
+    <div class="container-fluid ">
+        <div class="row">
+            <img class="img-fluid w-100 h-50" src="{% static 'img/2.jpg' %}" alt="">
         </div>
-    </div>
-    <br>
-    <h5 class="text-center">سرویس ها</h5>
-    <div class="row text-center">
-        {% for service in services %}
-        <div class="col-md-4 fadeInanim">
-            <div class="card m-3 p-3">
-                <div class="card-block">
-                    <h4 class="card-title"><bold>{{ service.name }}</bold></h4>
-                    <p class="card-text">هزینه: {{ service.fee }}</p>
-                    <a href="{% url 'ServicesPage' service.id %}" class="btn btn-info btn-block">دیدن زمان ها</a>
+        <div class="col-md-12  text-center">
+            <div class="card mt-3 p-3 ">
+                <div class="card-block ">
+                    <div class="row  justify-content-center">
+                        <div class="bg-transparent breadcrumb">
+                            <div class="breadcrumb-item">{{ business.name }}</div>
+                            <div class="breadcrumb-item">{{ business.score }} </div>
+                        </div>
+                    </div>
+                    <p class="card-text">{{ business.description }}</p>
                 </div>
             </div>
         </div>
-        {% endfor %}
-    <div id="map" class="" style="height:400px;margin-top: 10px;"></div>
-    <footer class="pt-4 mt-4 w-100" style="background-color:rgba(170,161,191,0.38);position: absolute;left: 0;bottom: 0;height: 200px;width: 100% ">
-        <div class="container-fluid text-center text-md-left">
-            <div class="row">
-                <div class="col-md-6 col-12 text-center">
-                    <nav class="nav flex-column text-dark">
-                        <a class="nav-link" href="#">خانه</a>
-                        <a class="nav-link" href="#">درباره ی ما</a>
-                        <a class="nav-link" href="#">منو</a>
-                        <a class="nav-link" href="#">رزرو</a>
-                    </nav>
+        <br>
+        <h5 class="text-center">سرویس ها</h5>
+        <div class="row mb-5 text-center">
+            {% for service in services %}
+                <div class="col-md-4 fadeInanim">
+                    <div class="card m-3 p-3">
+                        <div class="card-block">
+                            <h4 class="card-title">
+                                <bold>{{ service.name }}</bold>
+                            </h4>
+                            <p class="card-text">هزینه: {{ service.fee }}</p>
+                            <a href="{% url 'ServicesPage' service.id %}" class="btn btn-info btn-block">دیدن زمان
+                                ها</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 col-12 text-center">
-                    <h5 class="m-2 text-uppercase">{{ business.name }}</h5>
-                    <div>آدرس :{{ business.address }}</div>
-                    <div>شماره تلفن :{{ business.phone_number }}</div>
+            {% endfor %}
+        </div>
+        <div class="mt-5 p-5" style="background-color:rgba(215,249,255,0.36)">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+
+                    {% for reviewList in reviews %}
+                        {% if forloop.first %}
+                            <div class="carousel-item  active">
+                                <div class="row justify-content-around ">
+                                    {% for review in reviewList %}
+                                        <div class="col-3 ">
+                                            <div class="card p-3 text-light bg-info text-center border-0 ">
+                                                <p> امتیاز : {{ review.rating }}</p>
+                                                <p>{{ review.user }}:{{ review.description }}</p>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="carousel-item ">
+                                <div class="row justify-content-around">
+                                    {% for review in reviewList %}
+                                        <div class="col-3">
+                                            <div class="card p-3 text-light bg-info text-center border-0 ">
+                                                <p> امتیاز : {{ review.rating }}</p>
+                                                <p>{{ review.user }}:{{ review.description }}</p>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+
                 </div>
+
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon bg-info" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon bg-info" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-            <hr>
-        <div class="footer-copyright py-3 text-center">
-             2018 : Copyright ©
+            <div class="row justify-content-center mt-4">
+                <a href="{% url 'comment' business.id %}">
+                    <button class="btn btn-info"> شما هم نظر بدید</button>
+                </a>
+            </div>
         </div>
 
-        </div>
 
-    </footer>
+        <div id="map" class="" style="height:400px;margin-top: 10px;"></div>
+        <footer class="pt-4 mt-4 w-100"
+                style="background-color:rgba(170,161,191,0.38);position: absolute;left: 0;bottom: 0;height: 200px;width: 100% ">
+            <div class="container-fluid text-center text-md-left">
+                <div class="row">
+                    <div class="col-md-6 col-12 text-center">
+                        <nav class="nav flex-column text-dark">
+                            <a class="nav-link" href="#">خانه</a>
+                            <a class="nav-link" href="#">درباره ی ما</a>
+                            <a class="nav-link" href="#">منو</a>
+                            <a class="nav-link" href="#">رزرو</a>
+                        </nav>
+                    </div>
+                    <div class="col-md-6 col-12 text-center">
+                        <h5 class="m-2 text-uppercase">{{ business.name }}</h5>
+                        <div>آدرس :{{ business.address }}</div>
+                        <div>شماره تلفن :{{ business.phone_number }}</div>
+                    </div>
+                </div>
+                <hr>
+                <div class="footer-copyright py-3 text-center">
+                    2018 : Copyright ©
+                </div>
+
+            </div>
+
+        </footer>
 
     </div>
-</div>
 {% endblock content %}
 </body>
 
@@ -122,7 +189,6 @@
     })
 
 </script>
-
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ&callback=myMap"></script>
 
