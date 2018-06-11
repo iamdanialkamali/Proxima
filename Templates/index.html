@@ -1,59 +1,389 @@
-{% extends 'master.html' %}
-{% load  static %}
-{% block title %}
-Home Page
-{% endblock %}
-{% block content %}
-    <div class="row justify-content-center align-items-center align-content-center">
-        <div class="card border-0 mb-5  col-md-12 col-sm-12 col-12 text-center text-light"
-             style="height: 200px ;background-color:#243055">
-            <br>
-            <br>
-            <h2 class="card-title mb-3">
-                برترین سیستم ارتباط آنلاین کسب و کار شما و مشتری
-            </h2>
-            <p>
-                به راحتی کسب و کار خود را به مشتری هایتان معرفی کنید و از سیستم رزرو آنلاین به آسانی بهره ببرید.
-            </p>
+{#{% extends 'master.html' %}#}
+{#{% load  static %}#}
+{#{% block title %}#}
+{#Home Page#}
+{#{% endblock %}#}
+{#{% block content %}#}
+{#    <div class="row justify-content-center align-items-center align-content-center">#}
+{#        <div class="card border-0 mb-5  col-md-12 col-sm-12 col-12 text-center text-light"#}
+{#             style="height: 200px ;background-color:#243055">#}
+{#            <br>#}
+{#            <br>#}
+{#            <h2 class="card-title mb-3">#}
+{#                برترین سیستم ارتباط آنلاین کسب و کار شما و مشتری#}
+{#            </h2>#}
+{#            <p>#}
+{#                به راحتی کسب و کار خود را به مشتری هایتان معرفی کنید و از سیستم رزرو آنلاین به آسانی بهره ببرید.#}
+{#            </p>#}
+{#        </div>#}
+{#    </div>#}
+{#    <div class="row mt-5 justify-content-center">#}
+{#        <h4 class="col-md-12 col-sm-12 col-12 text-right mr-5"> ویژگی های ما :</h4>#}
+{##}
+{#        <div class="col-md-4 col-sm-10 col-12">#}
+{#            <div class="card m-3 text-right">#}
+{#                <div class="card-block p-2">#}
+{#                    <h4 class="card-title">رزرو آسان</h4>#}
+{#                    <p class="card-text"><img class="float-left" src="{% static 'images/calendar.png' %}" width="100" height="100"#}
+{#                                              alt="online payment" >از هر کجا که هستید به سادگی رزرو کنید.</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="col-md-4 col-sm-10 col-12">#}
+{#            <div class="card m-3 text-right">#}
+{#                <div class="card-block p-2">#}
+{#                    <h4 class="card-title">یاداوری رزروها</h4>#}
+{#                    <p class="card-text"><img class="float-left" src="{% static 'images/reminder.jpg' %}" width="100" height="100"#}
+{#                                              alt="online payment" >رزروهای خود رو یا یاداوری های#}
+{#                        خودکار فراموش نمی کنید</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="col-md-4 col-sm-10 col-12">#}
+{#            <div class="card m-3 text-right" >#}
+{#                <div class="card-block p-2">#}
+{#                    <h4 class="card-title">پرداخت آنلاین</h4>#}
+{#                    <p class="card-text"><img class="float-left" src="{% static 'images/payment.png' %}" width="100" height="100"#}
+{#                                              alt="online payment" >هزینه رزرو خود را به صورت آنلاین#}
+{#                        پرداخت کنید</p>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{##}
+{#    </div>#}
+{#    <footer class="pt-4 mt-4 w-100" style="background-color:rgba(170,161,191,0.38); ">#}
+{#        <div class="container-fluid text-center text-md-left">#}
+{#            <div class="row">#}
+{#                <div class="col-md-6 col-12 text-center">#}
+{#                    <nav class="nav flex-column text-dark">#}
+{#                        <a class="nav-link" href="#">خانه</a>#}
+{#                        <a class="nav-link" href="#">درباره ی ما</a>#}
+{#                        <a class="nav-link" href="#">منو</a>#}
+{#                        <a class="nav-link" href="#">رزرو</a>#}
+{#                    </nav>#}
+{#                </div>#}
+{#                <div class="col-md-6 col-12 text-center">#}
+{#                    <h5 class="m-2 text-uppercase">زنبیل</h5>#}
+{#                    <div>آدرس : تهران -مستقیم - دست راست</div>#}
+{#                    <div>شماره تلفن :77456589</div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <hr>#}
+{#        </div>#}
+{#        <div class="footer-copyright py-3 text-center">#}
+{#             2018 : Copyright ©#}
+{#        </div>#}
+{##}
+{#    </footer>#}
+{##}
+{##}
+{#{% endblock content %}#}
+{% load static %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <link href="{% static 'css/BYekan.css' %}" rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"
+            integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+            crossorigin="anonymous"></script>
+    {% block stylesheet %}
+
+    {% endblock %}
+</head>
+<style>
+    {% block style %}
+
+    {% endblock %}
+
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    body {
+        background-color: #F9FBFD;
+        font-family: BYekan, 'BYekan', tahoma;
+    }
+
+    .landingPage {
+        background: url('https://zapla.co/static/images/index/header-highres.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        height: 90vh;
+    }
+
+    .slideanim {
+        visibility: hidden;
+    }
+
+    .fadeInanim {
+        visibility: hidden;
+    }
+
+    .fadeIn {
+        -webkit-animation-name: fadeIn;
+        -moz-animation-name: fadeIn;
+        -o-animation-name: fadeIn;
+        animation-name: fadeIn;
+        -webkit-animation-duration: 1s;
+        -moz-animation-duration: 1s;
+        -o-animation-duration: 1s;
+        animation-duration: 1s;
+        visibility: visible;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: .5;
+        }
+        80% {
+            opacity: .8;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @-webkit-keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: .5;
+        }
+
+        80% {
+            opacity: .8;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .slide {
+        animation-name: slide;
+        -webkit-animation-name: slide;
+        animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        visibility: visible;
+    }
+
+    @keyframes slide {
+        0% {
+            opacity: 0;
+            transform: translateY(70%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+
+    @-webkit-keyframes slide {
+        0% {
+            opacity: 0;
+            -webkit-transform: translateY(70%);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: translateY(0%);
+        }
+    }
+</style>
+<body>
+<div class="container-fluid">
+    <div class="landingPage w-100" style="height: 100vh ;">
+        <nav class="navbar navbar-dark navbar-expand-md  text-center"
+             style="background-color:rgba(50,206,253,0.03)  ">
+            <a class="navbar-brand" href="#">زنبیل</a>
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ml-auto   ">
+                    <li class="nav-item mr-4">
+                        <a class="nav-link" href="{% url 'main' %}">خانه</a>
+                    </li>
+                    {% for foo in categories %}
+                        <li class="nav-item mr-4">
+                            <a class="nav-link" href="{% url 'Businesses' foo.id %}">{{ foo.name }}</a>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+                <span class="mr-auto ml-4">
+
+                    {% if user.is_authenticated %}
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="userMenu" data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    {{ user.username }}
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                                    <a class="dropdown-item" href="{% url 'account' user.id %}">My account</a>
+                                    <a class="dropdown-item" href="#">Change password</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Log out</a>
+                                </div>
+                            </li>
+                        </ul>
+                    {% else %}
+                        <form class="form-inline ml-auto">
+                            <a href="#" class="btn btn-outline-secondary">Log in</a>
+                            <a href="#" class="btn btn-primary ml-2">Sign up</a>
+                        </form>
+                    {% endif %}
+
+                </span>
+
+            </div>
+        </nav>
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="card  text-light border-0" style="background-color:rgba(50,206,253,0.03)  ">
+                <h1 class="card-title"> زنبیل </h1>
+                <p class="card-text"> به راحتی کسب و کار خود را به مشتری هایتان معرفی کنید و از سیستم رزرو آنلاین به
+                    آسانی بهره ببرید.
+                </p>
+                <button class="btn btn-secondary align-self-center p-2 w-25"> همین الان ثبت نام کنید</button>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="container mt-5 mb-5">
+        <h3 class="text-center mb-5">ویژگی های ما</h3>
+        <div class="row justify-content-center">
+            <button class="btn btn-outline-info ml-5" onclick="" id="customer">مشتریان</button>
+            <button class="btn btn-outline-info " id="business"> شرکت ها</button>
+        </div>
+        <div class="customer_features mt-5 ">
+            <div class="row">
+                <div class="col">
+                    <div class="card text-center" style="height: 250px;">
+                        <i class="mt-3 mb-3 ml-auto mr-auto fas fa-calendar-alt" style="font-size:72px"></i>
+                        <h4 class="m-3"> از هر جا که هستید رزرو کنید</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-center" style="height: 250px;">
+                        <i class="mt-3 mb-3 ml-auto mr-auto fas fa-envelope" style="font-size:72px"></i>
+                        <h5 class="m-3"> ایمیل های یادآوری دریافت کنید تا هیچ قراری را فراموش نکنید .</h5>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-center" style="height: 250px;">
+                        <i class="mt-3 mb-3 ml-auto mr-auto fas fa-clipboard-list" style="font-size:72px"></i>
+                        <h5 class="m-3">از میان برترین های هر دسته بندی سرویس مدنظر خود را انتخاب کنید .</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bussiness_features mt-5 d-none">
+            <div class="row">
+                <div class="col">
+                    <div class="card text-center" style="height: 250px;">
+                        <i class="mt-3 mb-3 ml-auto mr-auto fas fa-chart-line" style="font-size:72px"></i>
+                        <h4 class="m-3"> کسب و کار خود را به بهترین شکل به مشتری ها معرفی کنید و پیشرفت کنید.</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-center" style="height: 250px;">
+                        <i class="mt-3 mb-3 ml-auto mr-auto fas fa-table" style="font-size:72px"></i>
+                        <h4 class="m-3">به راحتی سرویس اضافه کنید و جدول زمانی انعظاف پذیر مطابق با هر سرویس
+                            بسازید.</h4>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card text-center" style="height: 250px;">
+                        <i class="mt-3 mb-3 ml-auto mr-auto fas fa-credit-card" style="font-size:72px"></i>
+                        <h4 class="m-3">از سیستم پرداخت آنلاین استفاده کنید.</h4>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row"></div>
+    </div>
+    <hr>
+    <div class="container mt-5">
+        <h4 class="text-center mb-5 ">  طرح های ما </h4>
+        <div class="card-deck mb-3 text-center fadeInanim">
+            <div class="card mb-4 box-shadow">
+                <div class="card-header" style="background-color: rgba(137,56,25,0.83)">
+                    <h4 class="my-0 font-weight-normal">طرح برنزی</h4>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title pricing-card-title">0
+                        <small class="text-muted">/ ماه</small>
+                    </h3>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>تعداد سرویس : 10</li>
+                        <li>سرویس ایمیل یادآوری : <i class="fas fa-check"></i></li>
+                        <li>سرویس پیامک یادآوری : <i class="fas fa-times"></i></li>
+                        <li>شخصی سازی صفحه شرکت : <i class="fas fa-times"></i></li>
+                        <li>پشتیبانی ۶ ماهه</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">ثبت نام</button>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header" style="background-color:rgba(209,220,221,0.83)">
+                    <h4 class="my-0 font-weight-normal">طرح نقره ای</h4>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title pricing-card-title">15000
+                        <small class="text-muted">/ ماه</small>
+                    </h3>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>تعداد سرویس : 10</li>
+                        <li>سرویس ایمیل یادآوری : <i class="fas fa-check"></i></li>
+                        <li>سرویس پیامک یادآوری : <i class="fas fa-check"></i></li>
+                        <li>شخصی سازی صفحه شرکت : <i class="fas fa-times"></i></li>
+                        <li>پشتیبانی 12 ماهه</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary">ثبت نام</button>
+                </div>
+            </div>
+            <div class="card mb-4 box-shadow">
+                <div class="card-header"  style="background-color:rgba(188,176,117,0.93)">
+                    <h4 class="my-0 font-weight-normal">طرح طلایی</h4>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title pricing-card-title">45000
+                        <small class="text-muted">/ ماه</small>
+                    </h3>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>تعداد سرویس : نامحدود</li>
+                        <li>سرویس ایمیل یادآوری : <i class="fas fa-check"></i></li>
+                        <li>سرویس پیامک یادآوری : <i class="fas fa-check"></i></li>
+                        <li>شخصی سازی صفحه شرکت : <i class="fas fa-check"></i></li>
+                        <li>پشتیبانی 24 ماهه</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary">ثبت نام</button>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row mt-5 justify-content-center">
-        <h4 class="col-md-12 col-sm-12 col-12 text-right mr-5"> ویژگی های ما :</h4>
-
-        <div class="col-md-4 col-sm-10 col-12">
-            <div class="card m-3 text-right">
-                <div class="card-block p-2">
-                    <h4 class="card-title">رزرو آسان</h4>
-                    <p class="card-text"><img class="float-left" src="{% static 'images/calendar.png' %}" width="100" height="100"
-                                              alt="online payment" >از هر کجا که هستید به سادگی رزرو کنید.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-10 col-12">
-            <div class="card m-3 text-right">
-                <div class="card-block p-2">
-                    <h4 class="card-title">یاداوری رزروها</h4>
-                    <p class="card-text"><img class="float-left" src="{% static 'images/reminder.jpg' %}" width="100" height="100"
-                                              alt="online payment" >رزروهای خود رو یا یاداوری های
-                        خودکار فراموش نمی کنید</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 col-sm-10 col-12">
-            <div class="card m-3 text-right" >
-                <div class="card-block p-2">
-                    <h4 class="card-title">پرداخت آنلاین</h4>
-                    <p class="card-text"><img class="float-left" src="{% static 'images/payment.png' %}" width="100" height="100"
-                                              alt="online payment" >هزینه رزرو خود را به صورت آنلاین
-                        پرداخت کنید</p>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-    <footer class="pt-4 mt-4 w-100" style="background-color:rgba(170,161,191,0.38); ">
-        <div class="container-fluid text-center text-md-left">
+    <footer class="pt-4 my-md-5 pt-md-5 border-top" style="background-color:rgba(230,242,243,0.93)">
+    <div class="container-fluid text-center text-md-left">
             <div class="row">
                 <div class="col-md-6 col-12 text-center">
                     <nav class="nav flex-column text-dark">
@@ -73,9 +403,91 @@ Home Page
         </div>
         <div class="footer-copyright py-3 text-center">
              2018 : Copyright ©
-        </div>
+        </div></footer>
+</div>
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
 
-    </footer>
 
+<script>
+    $(document).ready(function () {
+        $("#customer").click(function () {
+            $("#customer").addClass('active')
+            $("#business").removeClass('active')
 
-{% endblock content %}
+            $(".customer_features").show();
+            $(".bussiness_features").hide();
+
+        });
+        $("#business").click(function () {
+            $(".bussiness_features").removeClass('d-none')
+
+            $("#business").addClass('active')
+            $("#customer").removeClass('active')
+
+            $(".customer_features").hide();
+            $(".bussiness_features").show();
+
+        });
+
+    });
+
+    function myMap() {
+        var mapCanvas = document.getElementById("map");
+        var mapOptions = {
+            center: new google.maps.LatLng(40.5, -0.2),
+            zoom: 80
+        };
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+    }
+
+    $(document).ready(function () {
+        // Add smooth scrolling to all links in navbar + footer link
+        $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function () {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            } // End if
+        });
+
+        $(window).scroll(function () {
+            $(".slideanim").each(function () {
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("slide");
+                }
+            });
+
+            $(".fadeInanim").each(function () {
+                var pos = $(this).offset().top;
+
+                var winTop = $(window).scrollTop();
+                if (pos < winTop + 600) {
+                    $(this).addClass("fadeIn");
+                }
+            });
+        });
+    })
+
+</script>
+<script src="{% static 'js/tether.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
