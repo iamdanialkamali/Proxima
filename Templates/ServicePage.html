@@ -1,6 +1,8 @@
 {% extends 'master.html' %}
 {% load static %}
 {% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/timetableColEdit.css' %}">
+
 {% endblock %}
 {% block style %}
     .col{
@@ -66,13 +68,16 @@
             <div class="row mt-5 p-1 border rounded "
                  style="background-color:rgba(50,206,253,0.06)">
                 <div class="col text-center">
-                    <p style="font-size: 1em">شنبه</p>
+                    <p style="font-size: .8em">شنبه</p>
                     {% for sans in days.0 %}
 
                         <div class=" time mt-md-3 mt-sm-2">
-                            <button class="btn btn-outline-info  w-100" data-toggle="modal" {% if sans.is_reserved %}
+                            <button class="btn btn-outline-info pl-0 pr-0 w-100" data-toggle="modal" {% if sans.is_reserved %}
                                     style="background-color: #0e8c8c ; color: black" disabled {% endif %}
-                                    data-target="#{{ forloop.counter }}0"><a>{{ sans.sansdata.start_time }}</a><a>to</a><a>{{ sans.sansdata.end_time }}</a>
+                                    data-target="#{{ forloop.counter }}0">
+                                    <div class="p-0 m-0">
+                                    {{ sans.sansdata.start_time }}-{{ sans.sansdata.end_time }}
+                                    </div>
                             </button>
                         </div>
                         <!-- Modal -->
@@ -119,14 +124,14 @@
                     {% endfor %}
                 </div>
                 <div class="col text-center">
-                    <p style="font-size: 1em">یکشنبه</p>
+                    <p style="font-size: .8em">یکشنبه</p>
                     {% for sans in days.1 %}
 
 
                         <div class=" time mt-md-3 mt-sm-2">
-                            <button class="btn btn-outline-info  w-100" data-toggle="modal" {% if sans.is_reserved %}
+                            <button class="btn btn-outline-info pl-0 pr-0  w-100" data-toggle="modal" {% if sans.is_reserved %}
                                     style="background-color: #0e8c8c ; color: black" disabled {% endif %}
-                                    data-target="#{{ forloop.counter }}1"><a>{{ sans.sansdata.start_time }}</a><a>to</a><a>{{ sans.sansdata.end_time }}</a>
+                                    data-target="#{{ forloop.counter }}1"><a>{{ sans.sansdata.start_time }}</a><a>-</a><a>{{ sans.sansdata.end_time }}</a>
                             </button>
                         </div>
                         <!-- Modal -->
@@ -173,14 +178,14 @@
                     {% endfor %}
                 </div>
                 <div class="col text-center">
-                    <p style="font-size: 1em">دوشنبه</p>
+                    <p style="font-size: .8em">دوشنبه</p>
                     {% for sans in days.2 %}
 
 
                         <div class=" time mt-md-3 mt-sm-2">
-                            <button class="btn btn-outline-info  w-100" data-toggle="modal" {% if sans.is_reserved %}
+                            <button class="btn btn-outline-info pl-0 pr-0  w-100" data-toggle="modal" {% if sans.is_reserved %}
                                     style="background-color: #0e8c8c ; color: black" disabled {% endif %}
-                                    data-target="#{{ forloop.counter }}2"><a>{{ sans.sansdata.start_time }}</a><a>to</a><a>{{ sans.sansdata.end_time }}</a>
+                                    data-target="#{{ forloop.counter }}2"><a>{{ sans.sansdata.start_time }}</a><a>-</a><a>{{ sans.sansdata.end_time }}</a>
                             </button>
                         </div>
                         <!-- Modal -->
@@ -227,14 +232,14 @@
                     {% endfor %}
                 </div>
                 <div class="col text-center">
-                    <p style="font-size: 1em">سه شنبه</p>
+                    <p style="font-size: .8em">سه شنبه</p>
                     {% for sans in days.3 %}
 
 
                         <div class=" time mt-md-3 mt-sm-2">
-                            <button class="btn btn-outline-info  w-100" data-toggle="modal" {% if sans.is_reserved %}
+                            <button class="btn btn-outline-info pl-0 pr-0 w-100" data-toggle="modal" {% if sans.is_reserved %}
                                     style="background-color: #0e8c8c ; color: black" disabled {% endif %}
-                                    data-target="#{{ forloop.counter }}3"><a>{{ sans.sansdata.start_time }}</a><a>to</a><a>{{ sans.sansdata.end_time }}</a>
+                                    data-target="#{{ forloop.counter }}3"><a>{{ sans.sansdata.start_time }}</a><a>-</a><a>{{ sans.sansdata.end_time }}</a>
                             </button>
                         </div>
                         <!-- Modal -->
@@ -281,14 +286,14 @@
                     {% endfor %}
                 </div>
                 <div class="col text-center">
-                    <p style="font-size: 1em">چهارشنبه</p>
+                    <p style="font-size: .8em">چهارشنبه</p>
                     {% for sans in days.4 %}
 
 
                         <div class=" time mt-md-3 mt-sm-2">
-                            <button class="btn btn-outline-info  w-100" data-toggle="modal" {% if sans.is_reserved %}
+                            <button class="btn btn-outline-info pl-0 pr-0 w-100" data-toggle="modal" {% if sans.is_reserved %}
                                     style="background-color: #0e8c8c ; color: black" disabled {% endif %}
-                                    data-target="#{{ forloop.counter }}4"><a>{{ sans.sansdata.start_time }}</a><a>to</a><a>{{ sans.sansdata.end_time }}</a>
+                                    data-target="#{{ forloop.counter }}4"><a>{{ sans.sansdata.start_time }}</a><a>-</a><a>{{ sans.sansdata.end_time }}</a>
                             </button>
                         </div>
                         <!-- Modal -->
@@ -335,14 +340,14 @@
                     {% endfor %}
                 </div>
                 <div class="col text-center">
-                    <p style="font-size: 1em">پنجشنبه</p>
+                    <p style="font-size: .8em">پنجشنبه</p>
                     {% for sans in days.5 %}
 
 
                         <div class=" time mt-md-3 mt-sm-2">
-                            <button class="btn btn-outline-info  w-100" data-toggle="modal" {% if sans.is_reserved %}
+                            <button class="btn btn-outline-info  pl-0 pr-0 w-100" data-toggle="modal" {% if sans.is_reserved %}
                                     style="background-color: #0e8c8c ; color: black" disabled {% endif %}
-                                    data-target="#{{ forloop.counter }}5"><a>{{ sans.sansdata.start_time }}</a><a>to</a><a>{{ sans.sansdata.end_time }}</a>
+                                    data-target="#{{ forloop.counter }}5"><a>{{ sans.sansdata.start_time }}</a><a>-</a><a>{{ sans.sansdata.end_time }}</a>
                             </button>
                         </div>
                         <!-- Modal -->
@@ -389,14 +394,14 @@
                     {% endfor %}
                 </div>
                 <div class="col text-center">
-                    <p style="font-size: 1em">جمعه</p>
+                    <p style="font-size: .8em">جمعه</p>
                     {% for sans in days.6 %}
 
 
                         <div class=" time mt-md-3 mt-sm-2">
-                            <button class="btn btn-outline-info  w-100" data-toggle="modal" {% if sans.is_reserved %}
+                            <button class="btn btn-outline-info pl-0 pr-0 w-100" data-toggle="modal" {% if sans.is_reserved %}
                                     style="background-color: #0e8c8c ; color: black" disabled {% endif %}
-                                    data-target="#{{ forloop.counter }}6"><a>{{ sans.sansdata.start_time }}</a><a>to</a><a>{{ sans.sansdata.end_time }}</a>
+                                    data-target="#{{ forloop.counter }}6"><a>{{ sans.sansdata.start_time }}</a><a>-</a><a>{{ sans.sansdata.end_time }}</a>
                             </button>
                         </div>
                         <!-- Modal -->

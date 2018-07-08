@@ -1,14 +1,10 @@
 {% extends 'master.html' %}
 {% load static %}
-{% block style %}
-    .col{
-    padding-left: .7%;
-    padding-right:.7%;
+{% block stylesheet %}
+    <link rel="stylesheet" href="{% static 'css/timetableColEdit.css' %}">
+    <link rel="stylesheet" href="{% static 'css/deleteStyle.css' %}">
 
-    }
-
-{% endblock %}
-
+{% endblock stylesheet %}
 {% block slider %}
 {% endblock slider %}
 {% block content %}
@@ -154,6 +150,16 @@
                  
        {% endfor %}
    </div>
+
+
+</div>
+<div class="row mt-5 justify-content-center">
+    <a href="{% url 'ServicesPage' service.id%}">
+        <button class="btn btn-info">
+            رفتن به صفحه ی سرویس
+        </button>
+    </a>
 </div>
 </div>
+    
 {% endblock %}
