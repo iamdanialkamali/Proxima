@@ -1,0 +1,135 @@
+{% extends 'master.html' %}
+{% load static %}
+{% block slider %}
+{% endblock slider %}
+{% block content %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+    <div class="container-fluid" >
+        <div class="card col-md-12" style="border: none;">
+            <img class="card-img img-fluid" style="opacity:.5;" src="{{business.image.url}}">
+                <div class="card-img-overlay h-100">
+                     <div class = "row  justify-content-center align-items-center" style = "height: inherit">
+                        <button data-toggle="modal" data-target="#myModal" class="btn btn-info">تغیر عکس</button>
+                    </div>
+                </div>
+        </div>
+
+        
+  
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            
+<form action="{% url 'changePhoto' business.id%}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>
+        <input id="id_image" type="file" class="" name="image">
+    </p>
+    <input type="submit" value="Submit" />
+</form>
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+        <br><br>
+        <div class="col-md-12  text-center">
+            <div class="card mt-3 p-3 ">
+                <div class="card-block ">
+                    <div class="row  justify-content-center">
+                        <div class="bg-transparent breadcrumb">
+                            <div class="breadcrumb-item">{{ business.name }}</div>
+                            <div class="breadcrumb-item">{{ business.score }} </div>
+                        </div>
+                    </div>
+                    <p class="card-text">{{ business.description }}</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h5 class="text-center">سرویس ها</h5>
+        <div class="row mb-5 text-center">
+            {% for service in services %}
+                <div class="col-md-4 fadeInanim">
+                    <div class="card m-3 p-3">
+                        <div class="card-block">
+                            <h4 class="card-title">
+                                <bold>{{ service.name }}</bold>
+                            </h4>
+                            <p class="card-text">هزینه: {{ service.fee }}</p>
+                            <a href="{% url 'ServicesPage' service.id %}" class="btn btn-info btn-block">دیدن زمان
+                                ها</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+        <a href="{% url 'addService' business.id%}"><button class="offset-5 btn btn-info">اضافه کردن سرویس</button></a>
+        <br><br><hr><br>
+        <div class="row mt-5 justify-content-center">
+                <div class="col-8">
+                    <canvas id="myChart"></canvas>
+        
+                </div>
+            </div>
+        
+
+        <div class="mt-5 mb-5 p-5" style="background-color:rgba(215,249,255,0.36)">
+            
+            {% for review in reviews %}
+                <div class="card pt-3 pb-3 m-3 text-right" style="border-right:5px solid #243055 ; border-left:none;border-top:none;border-bottom:none">
+                    <div class="card-text mr-5 row">
+                        <span>{{review.user}} : </span>
+                        <span>{{review.description}}</span>
+                        <span class="mr-auto ml-5">{{review.rating}}</span>
+                     </div>
+                </div>
+            {% endfor %}
+                
+        </div>
+    </div>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+        
+            // The data for our dataset
+            data: {
+                
+                labels: {{dates | safe}},
+                datasets: [{
+                    label: "تعداد رزرو در روز",
+                    backgroundColor: 'rgba(255,255,140,1)',
+                    borderColor: 'navy',
+                    data: {{reserves_count | safe }},
+                    fill:false,
+                }]
+            },
+        
+            // Configuration options go here
+            options: {}
+        });
+    </script>
+</div>
+{% endblock %}
