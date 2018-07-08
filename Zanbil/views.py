@@ -12,4 +12,4 @@ def main(request):
     return render(request, 'index.html', {'categories': categories, 'user': user})
 
 def test(request):
-    return render(request,'service.html')
+    return render(request,'form2.html')
