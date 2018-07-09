@@ -1,0 +1,41 @@
+{% extends 'master.html' %}
+{% block slider %}
+
+{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+
+    <div class="col-md-5 " style="background-color: #697e88;border-radius:5%;color: white">
+    <form dir="rtl" action="{% url 'addService' business_id %}" method="POST" align="right">
+        {% csrf_token %}
+         <br>
+        <div class="form-group">
+            <label class="right aligned"  for="name">  نام سرویس:</label>
+            <input name="ServiceName" type="text" placeholder="Service name" class="form-control">
+            <label for="discription">توضیحات:</label>
+            <input class="form-control" type="text" name="Description">
+            <label for="Fee">هزینه</label>
+            <input name=Fee type="text" placeholder="Fee" class="form-control">
+            <label for="Capacity">ظرفیت:</label>
+            <input type="text" class="form-control" name="Capacity" rows="3"></input>
+            <label for="firstSans">آغاز ساعت کاری:</label>
+            <input type="text" class="form-control" name="firstSans" rows="3" value="8"></input>
+            <label for="lastSans">اتمام ساعت کاری:</label>
+            <input type="text" class="form-control" name="lastSans" rows="3" value="20"></input>
+            
+            <label for="restTimeStart">آغاز زمان استراحت:</label>
+            <input type="text" class="form-control" name="restTimeStart" rows="3" value="12"></input>
+            <label for="restTimeEnd">اتمام زمان استراحت:</label>
+            <input type="text" class="form-control" name="restTimeEnd" rows="3" value="12"></input>
+        </div>
+
+
+                    <input class="btn-info" type="submit">
+        <br>
+        <br>
+                </form>
+    </div></div>
+{%  endblock content %}
+
+</body>
+</html>

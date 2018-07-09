@@ -1,0 +1,36 @@
+{% extends 'master.html' %}
+{% block slider %}
+
+{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+
+    <div class="col-md-5 " style="background-color: #697e88;border-radius:5%;color: white">
+    <form dir="rtl" action="{% url 'addBusiness'  %}" method="POST" align="right">
+        {% csrf_token %}
+         <br>
+                    <div class="form-group">
+                        <label class="right aligned"  for="BusinessName">  نام بیزینس:</label>
+                        <input name="BusinessName" type="text" placeholder="نام بیزینس" class="form-control">
+                        <label for="Description">توضیحات:</label>
+                        <input class="form-control" type="text" name="Description">
+                        <label for="number">شماره تلفن</label>
+                        <input name="number" type="text" placeholder="شماره تلفن" class="form-control">
+                        <label for="email">ایمیل:</label>
+                        <input type="text" class="form-control" name="email" rows="3"></input>
+                        <label for="address">آدرس:</label>
+                        <input type="text" class="form-control" name="address" rows="3"></input>
+                        <label for="category">دسته بندی:</label>
+                        <input type="text" class="form-control" name="category" rows="3"></input>
+                    </div>
+
+
+                    <input class="btn-info" type="submit">
+        <br>
+        <br>
+                </form>
+    </div></div>
+{%  endblock content %}
+
+</body>
+</html>
