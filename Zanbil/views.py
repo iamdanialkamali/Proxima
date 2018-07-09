@@ -1,10 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-
-from .models import Categories, Services, Reserves, Review, Business, Sans, Users
-from django.shortcuts import redirect
-from khayyam import *
-# Create your views here.
+from .models import Categories, Users,Test
 categories = Categories.objects.all()
 user = Users.objects.get(id=1)
 
@@ -13,3 +9,8 @@ def main(request):
 
 def test(request):
     return render(request,'form2.html')
+
+
+def imagetest(request,id):
+    testt = Test.objects.get(pk=id)
+    return render(request,'showtest.html',{'test':testt})

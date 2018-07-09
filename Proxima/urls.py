@@ -21,10 +21,13 @@ urlpatterns = [
     path('test',views.test),
     path('dashboard/<int:business_id>',dashboardController.render_dashboard , name='dashboard'),
     path('changePhoto/<int:id>',dashboardController.changePhoto,name='changePhoto'),
-    path('addService/<int:business_id>',addServiceController.addService,name="addService"),
+    path('test/<int:id>',views.imagetest,name='imagetest'),
+    path('addService/<int:business_id>',dashboardController.addService,name="addService"),
     path('editService/<int:service_id>',editServiceController.Render,name='editServicePage') ,
     path('addBusiness',addAndDeleteBusinessController.addBusiness,name = 'addBusiness'),
     path('deleteSans/<int:sans_id>/<int:service_id>',editServiceController.deleteSans,name='deleteSans'),
+    path('editSans/<int:sans_id>/<int:service_id>', editServiceController.editSans, name='editSans'),
+    path('addSans/<int:service_id>/<int:timetable_id>/<int:weekday>', editServiceController.addSans, name='addSans'),
     path('buildTimeTable/<int:service_id>', editServiceController.buildTimeTable , name = 'buildTimeTable')
 
 ]
