@@ -1,8 +1,8 @@
 from django.shortcuts import render , redirect
 from khayyam import JalaliDate
 from datetime import timedelta
-from zanbil.models import Services, Sans, Reserves, Review, Business , TimeTable
-from zanbil.views import user
+from Zanbil.models import Services, Sans, Reserves, Review, Business , TimeTable
+from Zanbil.views import user
 
 
 def buildTimeTable(request , service_id):
