@@ -46,8 +46,8 @@ class TimeTable(models.Model):
 
 class Sans(models.Model):
     id = models.AutoField(primary_key=True)
-    start_time = models.FloatField()
-    end_time = models.FloatField()
+    start_time = models.IntegerField(default=0)
+    end_time = models.IntegerField(default=0)
     time_table = models.ForeignKey(to=TimeTable, on_delete=models.DO_NOTHING)
     weekday = models.PositiveIntegerField(null=True)
 

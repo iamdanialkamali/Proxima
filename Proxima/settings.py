@@ -81,9 +81,9 @@ WSGI_APPLICATION = 'Proxima.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Zanbil2',
+        'NAME': 'danial',
         'USER': 'postgres',
-        'PASSWORD': 'proxima',
+        'PASSWORD': '1234',
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -127,5 +127,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-
+MEDIA_ROOT = os.path.join(BASE_DIR , 'images/')
+MEDIA_URL = os.path.join(BASE_DIR , 'images/')
 
