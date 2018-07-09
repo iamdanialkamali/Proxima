@@ -76,3 +76,25 @@ def getReservePerDate(weekday):
         for date in weekday:
             reserves.append(len(Reserves.objects.filter(date = date)))
         return reserves
+
+def editBusiness(request , business_id):
+    business = Business.objects.get(pk = business_id)
+    if request.method == 'POST':
+    
+        print('method is post')
+        
+        description = request.POST['Description']
+        number = request.POST['number']
+        email = request.POST['email']
+        address = request.POST['address']
+        business.description = description
+        business.phone_number = number
+        business.email = email
+        business.address = address
+        business.save()
+        return redirect('dashboard' , business.id)
+
+
+    return render(request, 'editBusiness.html',{'categories':categories , 'business' : business})
+
+    

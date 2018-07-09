@@ -9,32 +9,54 @@
         <div class="row  " style="height: 500px;">
 
             <div class="col border-0">
-                <a href="{% url 'BusinessPage' top_three.0.id %}">
-                    <div class="bg-transparent fadeInanim ">
-                        <div class="bg-transparent card m-3">
-                            <img class="card-img img-fluid" id="image" src="{{top_three.0.image.url}}" alt="Card image cap">
-                            <div class="card-img-overlay p-2">
-                                <div class="row justify-content-center align-items-center" style="height:200px">
-                                    <div class="row h-25  align-items-center text-center text-dark p-3" style="background-color:rgba(215,249,255,0.36)" >
-                                        <span class="">{{top_three.0.name }}</span>
-                                            /
-                                        <span class="">{{top_three.0.score}}</span>
-                                    </div>
-                                </div>       
-                           </div>
-                                    
+                <div>
+                    <a href="{% url 'BusinessPage' top_three.0.id %}">
+                        <div class="bg-transparent fadeInanim ">
+                            <div class="bg-transparent card m-3">
+                                <img class="card-img img-fluid" id="image" src="{{top_three.0.image.url}}" alt="Card image cap" style="height: 300px;">
+                                <div class="card-img-overlay p-2">
+                                    <div class="row justify-content-center align-items-center" style="height:300px">
+                                        <div class="row h-25  align-items-center text-center text-dark p-3" style="background-color:rgba(215,249,255,0.36)" >
+                                            <span class="">{{top_three.0.name }}</span>
+                                                /
+                                            <span class="">{{top_three.0.score}}</span>
+                                        </div>
+                                    </div>       
+                            </div>
+                                        
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+            </div>
+            <br>
+            <div>
+                    <a href="{% url 'BusinessPage' top_three.3.id %}">
+                        <div class="bg-transparent fadeInanim ">
+                            <div class="bg-transparent card m-3">
+                                <img class="card-img img-fluid" src="{{top_three.3.image.url}}" alt="Card image cap" style="height: 300px;">
+                                <div class="card-img-overlay p-2">
+                                    <div class="row justify-content-center align-items-center" style="height:300px">
+                                        <div class="row h-25  align-items-center text-center text-dark p-3" style="background-color:rgba(215,249,255,0.36)" >
+                                            <span class="">{{top_three.3.name }}</span>
+                                                /
+                                            <span class="">{{top_three.3.score}}</span>
+                                        </div>
+                                    </div>       
+                                </div>
+                                        
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
             <div class="col">
                     <div>
                     <a href="{% url 'BusinessPage' top_three.0.id %}">
                             <div class="bg-transparent fadeInanim ">
                                 <div class="bg-transparent card m-3">
-                                    <img class="card-img img-fluid" src="{{top_three.1.image.url}}" alt="Card image cap">
+                                    <img class="card-img img-fluid" src="{{top_three.1.image.url}}" alt="Card image cap" style="height: 300px;">
                                     <div class="card-img-overlay p-2">
-                                        <div class="row justify-content-center align-items-center" style="height:200px">
+                                        <div class="row justify-content-center align-items-center" style="height:300px">
                                             <div class="row h-25  align-items-center text-center text-dark p-3" style="background-color:rgba(215,249,255,0.36)" >
                                                 <span class="">{{top_three.1.name }}</span>
                                                     /
@@ -47,13 +69,14 @@
                             </div>
                         </a>
                     </div>
+                    <br>
                     <div>
                         <a href="{% url 'BusinessPage' top_three.2.id %}">
                             <div class="bg-transparent fadeInanim ">
                                 <div class="bg-transparent card m-3">
-                                    <img class="card-img img-fluid" src="E:\Programming\Django\Proxima\images\{{top_three.2.image.url}}" alt="Card image cap">
+                                    <img class="card-img img-fluid" src="{{top_three.2.image.url}}" alt="Card image cap" style="height: 300px;">
                                     <div class="card-img-overlay p-2">
-                                        <div class="row justify-content-center align-items-center" style="height:200px">
+                                        <div class="row justify-content-center align-items-center" style="height:3z`00px">
                                             <div class="row h-25  align-items-center text-center text-dark p-3" style="background-color:rgba(215,249,255,0.36)" >
                                                 <span class="">{{top_three.2.name }}</span>
                                                     /
@@ -72,7 +95,7 @@
     </div>
 {% endblock %}
 {% block content %}
-
+<br><br><br><br><br>
     <div class="container-fluid text-right p-5" style="background-color:rgba(215,249,255,0.36)">
         <div class="row justify-content-center">
             {% for business in remaining_businesess %}

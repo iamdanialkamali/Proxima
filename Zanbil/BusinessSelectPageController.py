@@ -11,9 +11,11 @@ class BusinessSelectPage:
         top_three.append(category_Businesses[0])
         top_three.append(category_Businesses[1])
         top_three.append(category_Businesses[2])
+        top_three.append(category_Businesses[3])
+
         remaining_businesess = []
         
-        for i in range(3,len(category_Businesses)):
+        for i in range(4,len(category_Businesses)):
             remaining_businesess.append(category_Businesses[i])
 
         category_name = Categories.objects.get(pk=category_id).name

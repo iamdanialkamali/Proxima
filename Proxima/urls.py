@@ -28,7 +28,8 @@ urlpatterns = [
     path('deleteSans/<int:sans_id>/<int:service_id>',editServiceController.deleteSans,name='deleteSans'),
     path('editSans/<int:sans_id>/<int:service_id>', editServiceController.editSans, name='editSans'),
     path('addSans/<int:service_id>/<int:timetable_id>/<int:weekday>', editServiceController.addSans, name='addSans'),
-    path('buildTimeTable/<int:service_id>', editServiceController.buildTimeTable , name = 'buildTimeTable')
+    path('buildTimeTable/<int:service_id>', editServiceController.buildTimeTable , name = 'buildTimeTable'),
+    path('editBusiness/<int:business_id>',dashboardController.editBusiness,name = 'editBusiness')
 
 ]
 
