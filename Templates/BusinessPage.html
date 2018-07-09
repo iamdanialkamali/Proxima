@@ -10,14 +10,14 @@
     <body>
     <div class="container-fluid ">
         <div class="row">
-            <img class="img-fluid w-100 h-50" src="{% static 'img/2.jpg' %}" alt="">
+            <img class="img-fluid w-100 h-50" src="{{ business.image.url}}" alt="">
         </div>
         <div class="col-md-12  text-center">
             <div class="card mt-3 p-3 ">
                 <div class="card-block ">
                     <div class="row  justify-content-center">
                         <div class="bg-transparent breadcrumb">
-                            <div class="breadcrumb-item">{{ business.name }}</div>
+                            <div class="breadcrumb-item">{{ business.business_name }}</div>
                             <div class="breadcrumb-item">{{ business.score }} </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@
                 </a>
             </div>
             <div class="row justify-content-center mt-4">
-                <a href="{% url 'comment' business.id %}">
+                <a href="{% url 'comment' id %}">
                     <button class="btn btn-info"> شما هم نظر بدید</button>
                 </a>
             </div>

@@ -29,11 +29,11 @@
             {% for business in category_businesses %}
                 <div class="bg-transparent col-md-4 col-sm-10 col-12 fadeInanim ">
                     <div class="bg-transparent card m-3">
-                        <img class="card-img-top" src=" {% static 'images/atmosfera1.jpg' %}" alt="Card image cap">
+                        <img class="card-img-top" src="{{business.image.url}}" alt="Card image cap">
                         <div class="card-block p-2">
                             <div class="breadcrumb">
                                 <div class="breadcrumb-item">{{ business.name }}</div>
-                                <div class="breadcrumb-item">{{ business.score }} </div>
+                                <div class="breadcrumb-item">{{business.score}}</div>
                             </div>
                             <p class="card-text">{{ business.description }}</p>
                             <a href="{% url 'BusinessPage' business.id %}" class="btn btn-info btn-block">بیشتر...</a>
@@ -45,5 +45,6 @@
         </div>
     </div>
 {% endblock content %}
+
 </body>
 </html>

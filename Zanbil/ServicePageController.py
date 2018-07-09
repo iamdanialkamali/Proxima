@@ -3,108 +3,133 @@ from khayyam import JalaliDate
 from datetime import timedelta
 from Zanbil.models import Services, Sans, Reserves, Review, Business
 from Zanbil.views import user
+from .db import cur
+import sys
 
 
 class ServicePageController:
     def Render(request, service_id):
         date = JalaliDate.today().__str__().replace('-', '/')
-        week_start_date = JalaliDate.today()-timedelta(days=JalaliDate.today().weekday())
-        weekday_date=week_start_date
-        this_week_days = []
-        for i in range(7):
-            weekday_date.__str__().replace('-','/')
-            this_week_days.append(weekday_date.__str__().replace('-','/'))
-            weekday_date = weekday_date + timedelta(1)
-        service = Services.objects.get(id=service_id)
-        selected_sanses = Sans.objects.filter(time_table__id=service.timetable.id).order_by('start_time')
-        sanses = [[],[],[],[],[],[],[]]
-        reserved_sanses = Reserves.objects.filter(date__in=this_week_days)
-        #print(reserved_sanses)
-        #reserved_sanses = [e.sans for e in reserved_sanses]
-       # print(reserved_sanses)
-        for sans in selected_sanses:
-            is_reserved=False
-            for reserved in reserved_sanses:
-                if(sans.id==reserved.sans.id):
-                    is_reserved=True
-            sanses[sans.weekday].append(SansContext(sans,is_reserved))
 
-        #print(sanses)
+        today = date
+        weekday = JalaliDate.today().weekday()
+        cur.execute("SELeCT * from services join timetable on (services.timetable_id=timetable.id)   where services.id = %s ",(str(service_id)))
+        service = cur.fetchall()
+        cur.execute("SELeCT * from users  where   users.id in( select owner_id from business where business.id =  %s) ",(str(service[0]['business_id'])))
+        owner  = cur.fetchall()
+        cur.execute(
+            "Select * from  sans where weekday = %s and id not in  (SELECT sans_id from reserves where date  like  %s  and service_id = %s ) ",(str(weekday), str(today), str(service_id)))
 
+        sanses = cur.fetchall
 
         return render(request, 'ServicePage.html',
-                      {'service': service, 'days': sanses, 'date': date,
-                       'user': user})
+                      {'service': service[0], 'days': sanses, 'date': date,
+                       'user': user,'owner':owner})
 
     def RenderTimeTable(request):
         if request.method == 'POST':
-            timetable_id = request.POST.get('time_table', '')
             service_id = int(request.POST.get('service'))
-            date = request.POST.get('date', '')
-            date_splited = date.split('/')
-            day = JalaliDate(int(date_splited[0]), int(date_splited[1]), int(date_splited[2]))
-            week_start_date = day - timedelta(days=JalaliDate.today().weekday())
-            weekday_date = week_start_date
-            this_week_days = []
-            for i in range(7):
-                weekday_date.__str__().replace('-', '/')
-                this_week_days.append(weekday_date.__str__().replace('-', '/'))
-                weekday_date = weekday_date + timedelta(1)
-            service = Services.objects.get(id=service_id)
-            selected_sanses = Sans.objects.filter(time_table__id=service.timetable.id).order_by('start_time')
-            sanses = [[], [], [], [], [], [], []]
-            reserved_sanses = Reserves.objects.filter(date__in=this_week_days)
-            print(reserved_sanses)
-            # reserved_sanses = [e.sans for e in reserved_sanses]
-            # print(reserved_sanses)
-            for sans in selected_sanses:
-                is_reserved = False
-                for reserved in reserved_sanses:
-                    if (sans.id == reserved.sans.id):
-                        is_reserved = True
-                sanses[sans.weekday].append(SansContext(sans, is_reserved))
+            try:
+                timetable_id = request.POST.get('time_table', '')
 
-            print(sanses)
+                date = request.POST.get('date', '')
+                date_splited = date.split('/')
+                day = JalaliDate(int(date_splited[0]), int(date_splited[1]), int(date_splited[2]))
+                week_start_date = day - timedelta(days=JalaliDate.today().weekday())
+                weekday_date = week_start_date
+                this_week_days = []
+                for i in range(7):
+                    weekday_date.__str__().replace('-', '/')
+                    this_week_days.append(weekday_date.__str__().replace('-', '/'))
+                    weekday_date = weekday_date + timedelta(1)
 
-            return render(request, 'ServicePage.html',
-                          {'service': service, 'days': sanses, 'date': date,
-                           'user': user})
+                today = date
+                weekday = day.weekday()
+                # service = Services.objects.get(id=service_id)
+                cur.execute(
+                    "SELeCT * from services join timetable on (services.timetable_id=timetable.id)   where services.id = %s ",
+                    (str(service_id)))
+                service = cur.fetchall()
 
-            selected_sanses = [sans for sans in selected_sanses]
-            if (JalaliDate.today() <= day):
-                final = set(selected_sanses).difference(set(reserved))
-            else:
+                cur.execute(
+                    "SELeCT * from users  where   users.id in( select owner_id from business where business.id =  %s) ",
+                    (str(service[0]['business_id'])))
+                owner = cur.fetchall()
+                timetable_id = str(service[0]['timetable_id'])
+                # selected_sanses = Sans.objects.filter(time_table__id=service.timetable.id).order_by('start_time')
+                cur.execute("SELECT * from sans where time_table_id = %s ", (timetable_id))
+
+                cur.execute(
+                    "Select * from  sans where weekday = %s and id not in  (SELECT sans_id from reserves where date  like  %s  and service_id = %s ) ",
+                    (str(weekday), str(today), str(service_id)))
+
+                sanses = cur.fetchall
+
+                return render(request, 'ServicePage.html',
+                              {'service': service[0], 'days': sanses, 'date': date,
+                               'user': user, 'owner': owner[0]})
+            except:
                 date = JalaliDate.today().__str__().replace('-', '/')
-                day = JalaliDate().today()
-                final = []
-            return render(request, 'ServicePage.html',
-                          {'service': service, 'sanses': final, 'day_name': day.weekdayname(),
-                           'date': date, 'user': user})
+
+                today = date
+                weekday = JalaliDate.today().weekday()
+                cur.execute(
+                    "SELeCT * from services join timetable on (services.timetable_id=timetable.id)   where services.id = %s ",
+                    (str(service_id)))
+                service = cur.fetchall()
+                cur.execute(
+                    "SELeCT * from users  where   users.id in( select owner_id from business where business.id =  %s) ",
+                    (str(service[0]['business_id'])))
+                owner = cur.fetchall()
+                cur.execute(
+                    "Select * from  sans where weekday = %s and id not in  (SELECT sans_id from reserves where date  like  %s  and service_id = %s ) ",
+                    (str(weekday), str(today), str(service_id)))
+
+                sanses = cur.fetchall
+
+                return render(request, 'ServicePage.html',
+                              {'service': service[0], 'days': sanses, 'date': date,
+                               'user': user, 'owner': owner})
 
     def Book(request):
         if (request.method == 'POST'):
-            date = request.POST.get('date', '')
+            date = str(request.POST.get('date', ''))
             sans_id = request.POST.get('sans_id', '')
             description = request.POST.get('description', '')
-            service = Services.objects.get(id=request.POST.get('service_id', ''))
+            service_id = request.POST.get('service_id', '')
             day = request.POST.get('day','')
             date_splited = date.split('/')
-            saturday = JalaliDate(int(date_splited[0]), int(date_splited[1]), int(date_splited[2]))
-            targetday = saturday + timedelta(days=int(day))
-            targetday=targetday.__str__().replace('-','/')
-            print(targetday)
-            sans = Sans.objects.get(pk=sans_id)
-            check_obj = Reserves.objects.filter(date=targetday, service_id=service.id,sans_id=sans_id)
-            print(check_obj)
-            if (len(check_obj) == 0):
-                Reserves.objects.create(user=user, sans=sans, date=targetday, description=description, service_id=service.id)
-                mybusiness = Business.objects.filter(id=service.business.id)
-                history = Reserves.objects.filter(user_id=user.id).order_by('date')
-                return render(request, 'AccountPage.html',
-                              {'user': user, 'historys': history, 'mybusiness': mybusiness})
-            else:
-                return ServicePageController.Render(request,service.id)
+            try:
+                if(int(date_splited[1])>12):
+                    hazard =True
 
+                if(0<int(date_splited[1])<=6 and int(date_splited[0])>30 ):
+                    hazard =True
+
+                if( 6< int(date_splited[1])<12 and int(date_splited[0])>30 ):
+                    hazard =True
+
+                if(int(date_splited[1]) == 12 and int(date_splited[0])==30 ):
+                    hazard =True
+                saturday = JalaliDate(int(date_splited[0]), int(date_splited[1]), int(date_splited[2]))
+                targetday = saturday + timedelta(days=int(day))
+                targetday=targetday.__str__().replace('-','/')
+
+                if(date.__contains__("INSERT") or date.__contains__("DELETE") or date.__contains__("AND") or date.__contains__(";") or date.__contains__("DROP") or date.__contains__("'") or date.__contains__("=") or date.__contains__(")") or date.__contains__("$") or date.__contains__("&")):
+                    raise Exception
+
+                cur.execute("INSERT INTO reserves( description, date, user_id, sans_id, service_id) VALUES (%s,%s,%s,%s,%s)",(str(description),str(day),str(user.id),str(sans_id),str(service_id)))
+                cur.execute(
+                    "select * from business join categories on (categories.id = business.category_id) where owner_id=" + str(user.id))
+
+                mybusiness = cur.fetchall()
+                cur.execute("select * from  reserves  join  services on (services.id = reserves.service_id) join business on (business.id = services.business_id) join sans on (sans.id = reserves.sans_id) where user_id  = %s",(str(user.id)))
+
+                history = cur.fetchall()
+                return render(request, 'AccountPage.html',
+                              {'user': user, 'historys': history, 'mybusiness': mybusiness })
+            except  Exception as e:
+                ServicePageController.Render(request, service_id)
 class SansContext:
     def __init__(self,sans,reserved):
         self.sansdata = sans

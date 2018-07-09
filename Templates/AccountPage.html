@@ -18,7 +18,7 @@
     </div>
 
     <div class="container">
-        <a class="float-right" href="{% url 'createBusiness' user.id %}">
+        <a class="float-right" href="{% url 'addBusiness' %}">
             <button class="btn btn-primary">ساخب کسب وکار جدید</button>
         </a>
     </div>
@@ -31,16 +31,16 @@
                 <div class="col-md-4 col-10 col-sm-6 mt-4">
                     <div class="card bg-transparent  text-left p-4" style="border:1px solid #243055;">
                         <div class="card-text m-2 breadcrumb bg-transparent">
-                            <div class="breadcrumb-item">{{ history.service.business.name }}</div>
-                            <div class="breadcrumb-item">{{ history.service.name }}</div>
+                            <div class="breadcrumb-item">{{ history.business_name }}</div>
+                            <div class="breadcrumb-item">{{ history.service_name }}</div>
                         </div>
                         <div class="card-text m-2"><b>تاریخ:</b>{{ history.date }}</div>
-                        <div class="card-text m-2"><b>زمان شروع:</b>{{ history.sans.start_time }}</div>
-                        <div class="card-text m-2"><b>زمان پایان:</b>{{ history.sans.end_time }}</div>
-                        <div class="card-text m-2"><b>آدرس:</b>{{ history.service.business.address }}</div>
+                        <div class="card-text m-2"><b>زمان شروع:</b>{{ history.start_time }}</div>
+                        <div class="card-text m-2"><b>زمان پایان:</b>{{ history.end_time }}</div>
+                        <div class="card-text m-2"><b>آدرس:</b>{{ history.address }}</div>
                         <div class="card-text m-2"><b>توضیحات:</b>{{ history.description }}</div>
                         <div class="row m-2">
-                            <a href="{% url 'ServicesPage' history.service.id %}">
+                            <a href="{% url 'ServicesPage' history.service_id %}">
                                 <button
                                         class="btn btn-outline-primary card-link">رزرو بیشتر
                                 </button>
@@ -62,11 +62,12 @@
                 <div class="col-md-4 col-10 col-sm-8 mt-4 ">
                     <div class="card bg-transparent  text-left p-4" style="border:1px solid  #243055;">
                         <div class="breadcrumb bg-transparent">
-                            <div class="breadcrumb-item">{{ business.category.name }}</div>
+                            <div class="breadcrumb-item">{{ category.name }}</div>
                             <div class="breadcrumb-item">{{ business.name }}</div>
                         </div>
                         <div class="row m-2">
-                            <a href="{% url 'BusinessPage' business.id %}">
+                            {{ business }}
+                            <a href="{% url 'dashboard' business.id  %}">
                                 <button class="btn btn-outline-primary card-link m-2"> صفحه کسب وکار</button>
                             </a>
                             <button class="btn btn-outline-danger card-link m-2">حذف کسب وکار</button>

@@ -28,6 +28,7 @@ class Business(models.Model):
     address = models.TextField(max_length=500)
     description = models.TextField(max_length=600, default='test')
     category = models.ForeignKey(Categories, on_delete=models.DO_NOTHING)
+    image =models.ImageField(default='2.jpg')
 
     def __str__(self):
         return self.name
@@ -61,12 +62,17 @@ class Services(models.Model):
     # pics = ArrayField(models.ImageField(blank=True),blank=True,default=[])
     fee = models.FloatField()
     timetable = models.ForeignKey(TimeTable, on_delete=models.DO_NOTHING)
-    rating = models.FloatField()
+    rating = models.FloatField(default=0)
     description = models.TextField(max_length=600, default='test')
-    cancellation_fee = models.FloatField()
-    cancelation_time = models.FloatField()
+    cancellation_fee = models.FloatField(default=0)
+    cancelation_time = models.FloatField(default=0)
     capacity = models.IntegerField()
-    off = models.FloatField()
+    off = models.FloatField(default=0)
+    firstSans = models.FloatField(default=8)
+    lastSans = models.FloatField(default=20)
+    restTimeStart = models.FloatField(default=12)
+    restTimeEnd = models.FloatField(default=12)
+
 
     def __str__(self):
         return self.name
@@ -98,3 +104,7 @@ class pics(models.Model):
     Business = models.ForeignKey(to=Business, on_delete=models.CASCADE, null=True, related_name='business')
     Service = models.ForeignKey(to=Services, on_delete=models.CASCADE, null=True, related_name='service')
     image = models.ImageField(blank=True)
+
+class Test(models.Model):
+    name = models.CharField(max_length =100)
+    image = models.ImageField()
