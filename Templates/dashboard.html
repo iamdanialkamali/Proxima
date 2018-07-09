@@ -6,13 +6,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 
     <div class="container-fluid" >
-        <div class="card col-md-12" style="border: none;">
-            <img class="card-img img-fluid" style="opacity:.5;" src="{{business.image.url}}">
+        <div class="row justify-content-center">
+            <div class="card col-md-9 border-0">
+                <img class="card-img img-fluid " style="opacity:.5; height:450px" src="{{business.image.url}}">
                 <div class="card-img-overlay h-100">
                      <div class = "row  justify-content-center align-items-center" style = "height: inherit">
                         <button data-toggle="modal" data-target="#myModal" class="btn btn-info">تغیر عکس</button>
                     </div>
                 </div>
+            </div>
         </div>
 
         
@@ -23,20 +25,33 @@
         
                 <!-- Modal Header -->
                 <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
         
                 <!-- Modal body -->
                 <div class="modal-body">
-                    
-                    <form action="{% url 'changePhoto' business.id%}" method="post" enctype="multipart/form-data">
+                    <div class="row justify-content-center">
+                        <form action="{% url 'changePhoto' business.id%}" method="post" enctype="multipart/form-data" align="right">
+                                {% csrf_token %}
+                                 <br>
+                                <div class="form-group">
+                                    <label for="name">عکس:</label>
+                                    <input id="id_image" type="file" class="" name="image">
+                                </div>
+                        
+                        
+                                <input class="btn-info mr-auto " type="submit">
+                                <br>
+                                <br>
+                            </form>
+                    </div>
+                    {% comment %} <form action="{% url 'changePhoto' business.id%}" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         <p>
                             <input id="id_image" type="file" class="" name="image">
                         </p>
                         <input type="submit" value="Submit" />
-                    </form>
+                    </form> {% endcomment %}
                 </div>
         
                 <!-- Modal footer -->

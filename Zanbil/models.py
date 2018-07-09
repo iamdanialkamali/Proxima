@@ -63,7 +63,7 @@ class Services(models.Model):
     fee = models.FloatField()
     timetable = models.ForeignKey(TimeTable, on_delete=models.DO_NOTHING)
     rating = models.FloatField(default=0)
-    description = models.TextField(max_length=600, default='test')
+    description = models.TextField(max_length=600, blank=True)
     cancellation_fee = models.FloatField(default=0)
     cancelation_time = models.FloatField(default=0)
     capacity = models.IntegerField()

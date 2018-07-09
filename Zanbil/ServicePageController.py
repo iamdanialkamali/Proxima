@@ -2,7 +2,7 @@ from django.shortcuts import render
 from khayyam import JalaliDate
 from datetime import timedelta
 from Zanbil.models import Services, Sans, Reserves, Review, Business
-from Zanbil.views import user
+from Zanbil.views import user , categories
 
 
 class ServicePageController:
@@ -34,7 +34,7 @@ class ServicePageController:
 
         return render(request, 'ServicePage.html',
                       {'service': service, 'days': sanses, 'date': date,
-                       'user': user})
+                       'user': user ,'categories':categories})
 
     def RenderTimeTable(request):
         if request.method == 'POST':
